@@ -1,0 +1,201 @@
+<?php
+	require('./src/config.php');
+	require('./src/Rcon.php');
+	require('./src/MinecraftServerStatus.class.php');
+	use Thedudeguy\Rcon;
+	$rcon = new Rcon($host, $port, $password, $timeout);
+	$Server = new MinecraftServerStatus($host);
+
+	if($Server->Get('online') && $Server->Get('maxplayers')) {
+		$ServerName = $Server->Get('hostname');
+		$ServerVersion = $Server->Get('version');
+	} else {
+		$ServerName = 'Lan-Party';
+		unset($ServerVersion);
+	}
+?>
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<title><?php echo $ServerName; ?></title>
+		<link rel="stylesheet" href="./src/layout.css">
+		<link href='https://fonts.googleapis.com/css?family=Sanchez' rel='stylesheet' type='text/css'>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script src="./src/ticker00.js"></script>
+		<script type="text/javascript">
+			var lastOnlineState = '';
+			function onlinestatus() {
+				$.get("./src/live.php?online=1", function(response) {
+					var online = (response !== '');
+					if(online) {
+						$(".online").fadeIn();
+						$(".offline").fadeOut();
+					} else {
+						$(".online").fadeOut();
+						$(".offline").fadeIn();
+					}
+					if (online !== lastOnlineState) {
+						$(".noinfo").fadeOut();
+						lastOnlineState = online;
+					}
+				});
+			}
+			
+			$(document).ready(function() {
+				$('#items').list_ticker({
+					speed:5000,
+					effect:'fade'
+				});
+				
+				$("#serverstatus").load("./src/live.php?serverstatus=1");
+				var serverstatus = setInterval(
+				function() {
+					$("#serverstatus").load("./src/live.php?serverstatus=1");
+				}, 10000);
+				
+				$("#livelog").load("./src/livelog.php");
+				var livelog = setInterval(
+				function() {
+					$("#livelog").load("./src/livelog.php");
+				}, 10000);
+				
+				$("button[name='start_server']").click(function(e) {
+					e.preventDefault();
+					$(this).fadeOut();
+					$(".noinfo").fadeIn();
+					$(".offline p:first-of-type").fadeOut();
+					$.post('', {start_server: true}, function() {
+						$("button[name='stopp_server']").fadeIn();
+					});
+				});
+				
+				$("button[name='stopp_server']").click(function(e) {
+					e.preventDefault();
+					$(this).fadeOut();
+					$(".noinfo").fadeIn();
+					$("#console").fadeOut();
+					$.post('', {stopp_server: true}, function() {
+						$("button[name='start_server']").fadeIn();
+					});
+				});
+				
+				$("#sendcommand").click(function(e) {
+					e.preventDefault();
+					
+					var commandInput = $("input[name='command']");
+					
+					$.post('', {command: commandInput.val()}, function() {
+						commandInput.val('');
+					});
+				});
+				
+				
+				onlinestatus();
+				setInterval(onlinestatus, 10000);
+			});
+		</script>
+		
+	</head>
+	<body>
+		<div id="header">
+			<div id="logo">
+				<h1> <?php echo str_replace("Minecraft ", "", $ServerName); ?> </h1>
+			</div>
+		</div>
+		<div id="nav">
+			<div id="nav_holder">
+				<ul>
+					<li class="first"><a href="#"> Startseite </a> </li>
+					<li><a href="#"> Regeln </a> </li>
+					<li><a href="#"> Hilfe </a> </li>
+				</ul>
+				<ul class="right">
+					<li class="first"><a href="./.minecraft.zip"> Download Minecraft! </a> </li>
+				</ul>
+			</div>
+		</div>
+		<div class="sub_header">
+			<div class="announcement">
+				<ul id="items">
+					<li>Willkommen auf dem <?php echo $ServerName; ?> Server</li>
+					<li>Lade dir die <a href="./.minecraft.zip">Minecraft.exe</a> herunter</li>
+					<li>Benutze immer den gleichen Namen, damit deine Items gespeichert werden.</li>
+					<li>Die Server IP ist: <?php echo $host; ?></li>
+					<li>Starte Minecraft mit der Version <?php echo $ServerVersion; ?></li>
+				</ul>
+			</div>
+			<div class="triangle-l"></div>
+			<div class="triangle-r"></div>
+		</div>
+		<div id="content_container">
+			<div class="right_content">
+				<h1> Die LAN Party kann beginnen! </h1>
+					<div class="offline" style="display: none;">
+						<p>Der Server ist momentan offline</p>
+						<?php
+							if(!empty($_POST["command"])) {
+								if ($rcon->connect()) {
+								  $rcon->sendCommand($_POST["command"]);
+								  echo "<p>✔</p>";
+								}
+							}
+							if(isset($_POST['start_server'])) {
+								$fp = fsockopen('www.'.$host, 80);
+								if($fp !== false) {
+									$out = "GET /minecraft/start.php HTTP/1.1\r\n";
+									$out .= "Host: www.".$host."\r\n";
+									$out .= "Connection: Close\r\n\r\n";
+									fwrite($fp, $out);
+									fclose($fp);
+								}
+							}
+							if(isset($_POST['stopp_server'])) {
+								$fp = fsockopen('www.'.$host, 80);
+								if($fp !== false) {
+									$out = "GET /minecraft/stopp.php HTTP/1.1\r\n";
+									$out .= "Host: www.".$host."\r\n";
+									$out .= "Connection: Close\r\n\r\n";
+									fwrite($fp, $out);
+									fclose($fp);
+								}
+							}
+						?>
+						<form method="post">
+							<button type="submit" name="start_server">Server starten</button>
+						</form>
+					</div>
+					<div id="console" class="online" style="display: none;">
+						<h2>Befehl an den Server senden:</h2>
+						<form method="post">
+							<input type="text" placeholder="Gebe einen Befehl ein..." name="command">
+							<input type="submit" id="sendcommand" value="Senden">
+						</form>
+						<form method="post">
+							<button type="submit" name="stopp_server">Server stoppen</button>
+						</form>
+						<p id="livelog">
+							<span id="livelog"></span>
+						</p>
+					</div>
+					<div class="noinfo">
+						<p>Bitte warten...</p>
+					</div>
+				<div class="footer">
+					<p>&copy;<?php echo date("Y"); ?> Tom Aschmann</p>
+				</div>
+			</div>
+			<div class="sidebar">
+				<h3 class="address">Serveradresse</h3>
+				<p class="address"><?php echo $host; ?></p>
+			</div>
+			<div class="sidebar">
+				<h3>Server Status: </h3>
+				<div class="online"></div>
+				<span id="serverstatus" class="online"></span>
+				<div class="offline"></div>
+				<p class="offline">Der Server ist momentan Offline</p>
+			</div>
+		</div>
+	</body>
+</html>
