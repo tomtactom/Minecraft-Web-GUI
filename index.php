@@ -18,7 +18,16 @@
 <html lang="de">
 	<head>
 		<meta charset="utf-8">
-		<title><?php echo $ServerName; ?></title>
+        <meta name="language" content="deutsch">
+		<meta name="robots" content="noindex, nofollow">
+		<meta name="audience" content="teenager">
+		<meta name="keywords" content="Minecraft, GUI, Statistik, Rcon, Verwaltung">
+		<meta name="date" content="05.11.2019/23:00">
+		<meta name="copyright" content="Tom Aschmann">
+		<meta name="copyright" content="Spiele auf deinem Minecraft Server und schau dir auf dieser Seite die Statistiken dazu an.">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<title><?php echo $ServerName; ?> GUI</title>
 		<link rel="stylesheet" href="./src/layout.css">
 		<link href='https://fonts.googleapis.com/css?family=Sanchez' rel='stylesheet' type='text/css'>
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
