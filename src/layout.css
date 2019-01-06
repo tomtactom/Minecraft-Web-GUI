@@ -330,7 +330,7 @@ button {
 	user-select: none;
 }
 
-nav form input input[type=text] {
+nav div ul li form input input[type=text] {
     margin: 0;
     padding: 0;
     border-top: 1.5px solid #444442;
