@@ -310,6 +310,7 @@ footer {
 #console input[type=submit] {
     width: 80px;
     float: right;
+    margin: 5px !important;
     margin-right: 50px;
 }
 input[type=submit],
