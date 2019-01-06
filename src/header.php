@@ -12,8 +12,17 @@
 					<li><a href="./hilfe"> Hilfe </a> </li>
 					<?php if(is_checked_in()): ?>
 					<li><a href="./logout"> Ausloggen </a></li>
-					<?php } else { ?>
-					<li></li>
+					<?php 
+						} else { 
+						login();
+					?>
+					<li>
+						<form method="post">
+							<input type="email" name="email" placeholder="E-Mail" required autofocus>
+							<input type="password" name="passwort" placeholder="Passwort" required>
+							<button type="submit">Login</button>
+						</form>
+					</li>
 					<li><a href="./passwort-vergessen"> Passwort vergessen </a></li>
 					<?php } ?>
 				</ul>
