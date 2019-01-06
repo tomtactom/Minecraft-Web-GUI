@@ -338,11 +338,12 @@ nav div ul li form input[type=password] {
     border-bottom: 1px solid #444442;
     border-left: 1px solid #444442;
     border-right: none;
+    display: block;
 }
 
 nav div ul li form input[type=password] {
     margin: 0;
-    margin-top: -50px;
+    margin-top: -15px;
     border-top: 1px solid #444442;
     border-bottom: 1px solid #444442;
     border-left: 1px solid #444442;
