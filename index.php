@@ -63,10 +63,10 @@
 					$("#serverstatus").load("./src/live.php?serverstatus=1");
 				}, 10000);
 				
-				$("#livelog").load("./src/livelog.php");
+				$("#livelog").load("./src/live.php?livelog=1");
 				var livelog = setInterval(
 				function() {
-					$("#livelog").load("./src/livelog.php");
+					$("#livelog").load("./src/live.php?livelog=1");
 				}, 10000);
 				
 				$("button[name='start_server']").click(function(e) {

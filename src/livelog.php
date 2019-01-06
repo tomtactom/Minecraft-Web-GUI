@@ -1,9 +1,8 @@
 <?php
 	require('./config.php');
-	
+	//Wird bald gelöscht
 	//Filtert Logfile
-	$file = file_get_contents("http://".$host."/minecraft/logs/latest.log");
-	$lines = array_splice(explode("\r\n", $file), 0);
+	$lines = array_splice(explode("\r\n", file_get_contents("http://".$host."/minecraft/logs/latest.log")), 0);
 	foreach(array_reverse($lines) as $line) {
 		$serverInfo = strpos($line, "[Server thread/INFO]") !== false;
 		$rcon = strpos($line, "[Rcon]") !== false;
@@ -17,5 +16,4 @@
 			}
 		}
 	}
-	end($lines);
 ?>
