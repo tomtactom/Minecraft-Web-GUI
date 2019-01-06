@@ -61,7 +61,7 @@ nav {
 	border-top: 10px solid #009514;
 	position: relative;
 	z-index: 9999;
-	user-selection: none;
+	user-select: none;
 }
 
 #nav_holder {
@@ -332,5 +332,5 @@ button {
     border-right: 2px solid #444442;
     color: #666666;
     cursor: pointer;
-	user-selection: none;
+	user-select: none;
 }
