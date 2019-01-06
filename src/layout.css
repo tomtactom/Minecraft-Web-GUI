@@ -330,8 +330,8 @@ button {
 	user-select: none;
 }
 
-nav div ul li form input[type=email],
-nav div ul li form input[type=password] {
+nav div ul form li input[type=email],
+nav div ul form li input[type=password] {
     margin: 0;
     margin-top: -4px;
     padding: 2px 1px 2px 1px;
@@ -342,17 +342,13 @@ nav div ul li form input[type=password] {
     display: block;
 }
 
-nav div ul li form input[type=password] {
+nav div ul form li input[type=password] {
     margin: 0;
     margin-top: -15px;
     border-top: 1px solid #444442;
     border-bottom: 1px solid #444442;
     border-left: 1px solid #444442;
     border-right: none;
-}
-
-nav div ul li form {
-    
 }
 
 a {
