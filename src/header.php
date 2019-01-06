@@ -17,7 +17,7 @@
 					?>
 					<li>
 						<form method="post">
-							<input type="email" name="email" placeholder="E-Mail" required autofocus>
+							<input type="email" name="email" placeholder="E-Mail" required><br>
 							<input type="password" name="passwort" placeholder="Passwort" required>
 							<button type="submit">Login</button>
 						</form>
