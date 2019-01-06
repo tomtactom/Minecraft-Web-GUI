@@ -335,20 +335,27 @@ nav div ul form li input[type=password] {
     margin: 0;
     margin-top: -4px;
     padding: 2px 1px 2px 1px;
-    border-top: 1px solid #444442;
-    border-bottom: 1px solid #444442;
-    border-left: 1px solid #444442;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
     border-right: none;
     display: block;
 }
 
 nav div ul form li input[type=password] {
     margin: 0;
-    margin-top: -15px;
+    margin-top: -16px;
     border-top: 1px solid #444442;
     border-bottom: 1px solid #444442;
     border-left: 1px solid #444442;
     border-right: none;
+}
+
+nav div ul form li button {
+    margin: 0;
+    font-size: 14px;
+    border-top: none;
+    border-bottom: none;
 }
 
 a {
