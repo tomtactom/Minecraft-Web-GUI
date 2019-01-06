@@ -27,7 +27,7 @@
 		<meta name="copyright" content="Spiele auf deinem Minecraft Server und schau dir auf dieser Seite die Statistiken dazu an.">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-		<title><?php echo $ServerName; ?> GUI</title>
+		<title><?php echo $ServerName; ?></title>
 		<link rel="stylesheet" href="./src/layout.css">
 		<link href='https://fonts.googleapis.com/css?family=Sanchez' rel='stylesheet' type='text/css'>
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
