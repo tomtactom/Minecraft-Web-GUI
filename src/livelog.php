@@ -1,4 +1,5 @@
 <?php
+/*
 	require('./config.php');
 	//Wird bald gelöscht
 	//Filtert Logfile
