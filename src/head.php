@@ -1,7 +1,11 @@
 <?php
+    session_start();
 	require('./src/config.php');
 	require('./src/Rcon.php');
 	require('./src/MinecraftServerStatus.class.php');
+    require_once('./src/functions.inc.php');
+	require('./src/settings.inc.php');
+
 	use Thedudeguy\Rcon;
 	$rcon = new Rcon($host, $port, $password, $timeout);
 	$Server = new MinecraftServerStatus($host);
