@@ -47,7 +47,7 @@
 					<li><a href="#"> Hilfe </a> </li>
 				</ul>
 				<ul class="right">
-					<li class="first"><a href="./.minecraft.zip"> Download Minecraft! </a> </li>
+					<li class="first"><a href="./minecraft.zip"> Download Minecraft! </a> </li>
 				</ul>
 			</div>
 		</div>
