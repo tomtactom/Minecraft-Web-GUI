@@ -7,4 +7,4 @@
 	$password = '';
 	$timeout = 5;
 */
-include('./config.inc.php');
+include('./src/config.inc.php');
