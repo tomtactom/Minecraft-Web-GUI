@@ -18,5 +18,5 @@ $showFormular = true;
 $showForm = true;
 $pdo = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_password);
 */
-include('./src/config.inc.php');
-include('./config.inc.php');
+@include('./src/config.inc.php');
+@include('./config.inc.php');
