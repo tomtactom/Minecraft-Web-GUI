@@ -13,8 +13,7 @@
 					<?php if(is_checked_in()): ?>
 					<li><a href="./logout"> Ausloggen </a></li>
 					<?php 
-						} else { 
-						login();
+						} else {
 					?>
 					<li>
 						<form method="post">

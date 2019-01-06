@@ -65,9 +65,6 @@ function error($error_msg) {
 	exit();
 }
 
-function login() {
-	global $error_msg;
-	global $pdo;
 	if(isset($_POST['email']) && isset($_POST['passwort'])) {
 		$email = $_POST['email'];
 		$passwort = $_POST['passwort'];
@@ -98,4 +95,3 @@ function login() {
 		}
 
 	}
-}
