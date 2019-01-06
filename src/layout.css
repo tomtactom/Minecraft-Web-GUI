@@ -333,6 +333,7 @@ button {
 nav div ul li form input[type=email],
 nav div ul li form input[type=password] {
     margin: 0;
+    margin-top: -4px;
     padding: 2px 1px 2px 1px;
     border-top: 1px solid #444442;
     border-bottom: 1px solid #444442;
