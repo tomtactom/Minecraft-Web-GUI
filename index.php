@@ -13,6 +13,32 @@
 		$ServerName = 'Lan-Party';
 		unset($ServerVersion);
 	}
+
+    if(!empty($_POST["command"])) {
+        if ($rcon->connect()) {
+          $rcon->sendCommand($_POST["command"]);
+        }
+    }
+    if(isset($_POST['start_server'])) {
+        $fp = fsockopen('www.'.$host, 80);
+        if($fp !== false) {
+            $out = "GET /minecraft/start.php HTTP/1.1\r\n";
+            $out .= "Host: www.".$host."\r\n";
+            $out .= "Connection: Close\r\n\r\n";
+            fwrite($fp, $out);
+            fclose($fp);
+        }
+    }
+    if(isset($_POST['stopp_server'])) {
+        $fp = fsockopen('www.'.$host, 80);
+        if($fp !== false) {
+            $out = "GET /minecraft/stopp.php HTTP/1.1\r\n";
+            $out .= "Host: www.".$host."\r\n";
+            $out .= "Connection: Close\r\n\r\n";
+            fwrite($fp, $out);
+            fclose($fp);
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -25,8 +51,6 @@
 		<meta name="date" content="05.11.2019/23:00">
 		<meta name="copyright" content="Tom Aschmann">
 		<meta name="description" content="Spiele auf deinem Minecraft Server und schau dir auf dieser Seite die Statistiken dazu an.">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
         <meta name="msapplication-TileColor" content="#8cbeff">
         <meta name="msapplication-TileImage" content="./src/favicon/ms-icon-144x144.png">
         <meta name="theme-color" content="#8cbeff">
@@ -51,12 +75,12 @@
 		<script type="text/javascript" src="./src/functions.js"></script>
 	</head>
 	<body>
-		<div id="header">
+		<header>
 			<div id="logo">
 				<h1> <?php echo str_replace("Minecraft ", "", $ServerName); ?> </h1>
 			</div>
-		</div>
-		<div id="nav">
+		</header>
+		<nav>
 			<div id="nav_holder">
 				<ul>
 					<li class="first"><a href="#"> Startseite </a> </li>
@@ -67,8 +91,8 @@
 					<li class="first"><a href="./minecraft.zip"> Download Minecraft! </a> </li>
 				</ul>
 			</div>
-		</div>
-		<div class="sub_header">
+		</nav>
+		<header>
 			<div class="announcement">
 				<ul id="items">
 					<li>Willkommen auf dem <?php echo $ServerName; ?> Server</li>
@@ -80,75 +104,70 @@
 			</div>
 			<div class="triangle-l"></div>
 			<div class="triangle-r"></div>
-		</div>
-		<div id="content_container">
-			<div class="right_content">
-				<h1> Die LAN Party kann beginnen! </h1>
-					<div class="offline" style="display: none;">
-						<p>Der Server ist momentan offline</p>
-						<?php
-							if(!empty($_POST["command"])) {
-								if ($rcon->connect()) {
-								  $rcon->sendCommand($_POST["command"]);
-								  echo "<p>✔</p>";
-								}
-							}
-							if(isset($_POST['start_server'])) {
-								$fp = fsockopen('www.'.$host, 80);
-								if($fp !== false) {
-									$out = "GET /minecraft/start.php HTTP/1.1\r\n";
-									$out .= "Host: www.".$host."\r\n";
-									$out .= "Connection: Close\r\n\r\n";
-									fwrite($fp, $out);
-									fclose($fp);
-								}
-							}
-							if(isset($_POST['stopp_server'])) {
-								$fp = fsockopen('www.'.$host, 80);
-								if($fp !== false) {
-									$out = "GET /minecraft/stopp.php HTTP/1.1\r\n";
-									$out .= "Host: www.".$host."\r\n";
-									$out .= "Connection: Close\r\n\r\n";
-									fwrite($fp, $out);
-									fclose($fp);
-								}
-							}
-						?>
-						<form method="post">
-							<button type="submit" name="start_server">Server starten</button>
-						</form>
-					</div>
-					<div id="console" class="online" style="display: none;">
-						<h2>Befehl an den Server senden:</h2>
-						<form method="post">
-							<input type="text" placeholder="Gebe einen Befehl ein..." name="command">
-							<input type="submit" id="sendcommand" value="Senden">
-						</form>
-						<form method="post">
-							<button type="submit" name="stopp_server">Server stoppen</button>
-						</form>
-						<p id="livelog">
-							<span id="livelog"></span>
-						</p>
-					</div>
-					<div class="noinfo">
-						<p>Bitte warten...</p>
-					</div>
-				<div class="footer">
+		</header>
+		<main>
+			<article>
+                
+                <!-- Eingeloggte Nutzer -->
+                <section class="authorization">
+                    <h1> Die LAN Party kann beginnen! </h1>
+                    <!-- Offline Part -->
+                    <div class="offline" style="display: none;">
+                        <p>Der Server ist momentan offline</p>
+                        <form method="post">
+                            <button type="submit" name="start_server">Server starten</button>
+                        </form>
+                    </div>
+
+                    <!-- Online Part -->
+                    <div id="console" class="online" style="display: none;">
+                        <h2>Befehl an den Server senden:</h2>
+                        <form method="post">
+                            <input type="text" placeholder="Gebe einen Befehl ein..." name="command">
+                            <input type="submit" id="sendcommand" value="Senden">
+                        </form>
+                        <form method="post">
+                            <button type="submit" name="stopp_server">Server stoppen</button>
+                        </form>
+                        <p id="livelog">
+                            <span id="livelog"></span>
+                        </p>
+                    </div>
+                </section>
+                
+                <!-- Nicht eingeloggte Nutzer -->
+                <section class="public">
+                    <!-- Offline Part -->
+                    <div class="offline" style="display: none;">
+                        
+                    </div>
+                    <!-- Online Part -->
+                    <div class="online" style="display: none;">
+                        
+                    </div>
+                    
+                </section>
+                
+                <!-- NoInfo Part -->
+                <div class="noinfo">
+                    <p>Bitte warten...</p>
+                </div>
+                
+				<footer>
 					<p>&copy;<?php echo date("Y"); ?> Tom Aschmann</p>
-				</div>
-			</div>
-			<div class="sidebar">
+				</footer>
+			</article>
+			<aside>
 				<h3 class="address">Serveradresse</h3>
 				<p class="address"><?php echo $host; ?></p>
-			</div>
-			<div class="sidebar">
+			</aside>
+			<aside>
 				<h3>Server Status: </h3>
 				<div class="online"></div>
 				<span id="serverstatus" class="online"></span>
 				<div class="offline"></div>
 				<p class="offline">Der Server ist momentan Offline</p>
-			</div>
-		</div>
+			</aside>
+		</main>
 	</body>
 </html>

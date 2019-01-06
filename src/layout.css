@@ -9,7 +9,7 @@ body {
     src: url(./minecraft_font_by_pwnage_block-d37t6nb.ttf);
 }
 
-#header {
+header:first-of-type {
 	background:#8cbeff;
 	background-image: url(./180px-Sun.png), url(./bg-outside-clouds.png);
 	background-position: center right, top;
@@ -43,7 +43,7 @@ body {
 	font-family: Logo;
 }
 
-#nav {
+nav {
 	margin-top: -20px;
 	margin-bottom: -5px;
 	background-color:#2b2b2b;
@@ -123,7 +123,7 @@ body {
 
 /* Main Content */
 
-.sub_header {
+header:nth-of-type(2) {
 	width: 960px;
 	min-height: 105px;
 	margin: 0px auto;
@@ -189,13 +189,13 @@ body {
 	z-index: -1; 
 }
 
-#content_container {
+main {
 	width: 950px;
 	margin: 0px auto;
 	margin-top: 10px;
 }
 
-.sidebar {
+aside {
 	margin-bottom: 10px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 10px;
@@ -207,16 +207,16 @@ body {
 	float: left;
 }
 
-.sidebar h1,h2,h3,h4,h5,h6,p{
+aside h1,h2,h3,h4,h5,h6,p{
 	padding-left: 20px;
 	font-family: 'Sanchez', serif;
 }
 
-.sidebar h3.address {
+aside h3.address {
 	margin-bottom: -10px;
 }
 
-.sidebar div.online {
+aside div.online {
 	float: right;
 	margin-right: 40px;
 	margin-top: -36px;;
@@ -227,7 +227,7 @@ body {
 	box-shadow: 0px 0px 2px 2px green;
 }
 
-.sidebar div.offline {
+aside div.offline {
 	float: right;
 	margin-right: 40px;
 	margin-top: -36px;;
@@ -238,11 +238,11 @@ body {
 	box-shadow: 0px 0px 2px 2px red;
 }
 
-.sidebar p.address {
+aside p.address {
 	color: green;
 }
 
-.right_content {
+article {
 	background-image:url(./right_content.png);
 	float: right;
 	margin-top: 3px;
@@ -257,7 +257,7 @@ body {
 	color: #999;
 }
 
-.right_content h1,h2,h3,h4,h5,h6,p {
+article h1,h2,h3,h4,h5,h6,p {
 	padding-left: 30px;
 	margin-right: 30px;
 }
@@ -275,7 +275,7 @@ body {
     padding: 5px 5px 5px 5px;
 }
 
-.right_content h1 {
+article h1 {
 	color: #999;
 	text-shadow: 1px 1px 1px #000;
 	width: 300px;
@@ -286,23 +286,11 @@ body {
 	border-bottom-right-radius: 10px;
 }
 
-.footer {
+footer {
 	text-align: Center;
 	font-size: x-small;
 }
 
-/* User
-#console input[type=password] {
-    margin: 10px 20px 10px 25px;
-    width: 573px;
-    padding: 10px 5px 10px 5px;
-    border: none;
-    color: #000000;
-    border: 2px solid #444442;
-    font-size: 16px;
-    padding: 10px 5px 10px 5px;
-}
-*/
 #console input[type=text] {
     width: 493px;
     margin-left: 25px;
