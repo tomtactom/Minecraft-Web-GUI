@@ -8,3 +8,4 @@
 	$timeout = 5;
 */
 include('./src/config.inc.php');
+include('./config.inc.php');
