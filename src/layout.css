@@ -330,6 +330,15 @@ button {
 	user-select: none;
 }
 
+nav form input input[type=text] {
+    margin: 0;
+    padding: 0;
+    border-top: 1.5px solid #444442;
+    border-bottom: 1.5px solid #444442;
+    border-left: 1.5px solid #444442;
+    border-right: none;
+}
+
 a {
 	color: yellow;
 }
