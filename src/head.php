@@ -1,0 +1,76 @@
+<?php
+	require('./src/config.php');
+	require('./src/Rcon.php');
+	require('./src/MinecraftServerStatus.class.php');
+	use Thedudeguy\Rcon;
+	$rcon = new Rcon($host, $port, $password, $timeout);
+	$Server = new MinecraftServerStatus($host);
+
+	if($Server->Get('online') && $Server->Get('maxplayers')) {
+		$ServerName = $Server->Get('hostname');
+		$ServerVersion = $Server->Get('version');
+	} else {
+		$ServerName = 'Lan-Party';
+		unset($ServerVersion);
+	}
+
+    if(!empty($_POST["command"])) {
+        if ($rcon->connect()) {
+          $rcon->sendCommand($_POST["command"]);
+        }
+    }
+    if(isset($_POST['start_server'])) {
+        $fp = fsockopen('www.'.$host, 80);
+        if($fp !== false) {
+            $out = "GET /minecraft/start.php HTTP/1.1\r\n";
+            $out .= "Host: www.".$host."\r\n";
+            $out .= "Connection: Close\r\n\r\n";
+            fwrite($fp, $out);
+            fclose($fp);
+        }
+    }
+    if(isset($_POST['stopp_server'])) {
+        $fp = fsockopen('www.'.$host, 80);
+        if($fp !== false) {
+            $out = "GET /minecraft/stopp.php HTTP/1.1\r\n";
+            $out .= "Host: www.".$host."\r\n";
+            $out .= "Connection: Close\r\n\r\n";
+            fwrite($fp, $out);
+            fclose($fp);
+        }
+    }
+?>
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+        <meta name="language" content="deutsch">
+		<meta name="robots" content="noindex, nofollow">
+		<meta name="audience" content="teenager">
+		<meta name="keywords" content="Minecraft, GUI, Statistik, Rcon, Verwaltung">
+		<meta name="date" content="05.11.2019/23:00">
+		<meta name="copyright" content="Tom Aschmann">
+		<meta name="description" content="Spiele auf deinem Minecraft Server und schau dir auf dieser Seite die Statistiken dazu an.">
+        <meta name="msapplication-TileColor" content="#8cbeff">
+        <meta name="msapplication-TileImage" content="./src/favicon/ms-icon-144x144.png">
+        <meta name="theme-color" content="#8cbeff">
+		<title><?php echo $ServerName; ?> GUI</title>
+        <link rel="apple-touch-icon" sizes="57x57" href="./src/favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="./src/favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="./src/favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="./src/favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="./src/favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="./src/favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="./src/favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="./src/favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="./src/favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="./src/favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./src/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="./src/favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./src/favicon/favicon-16x16.png">
+        <link rel="manifest" href="./src/favicon/manifest.json">
+		<link rel="stylesheet" href="./src/layout.css">
+		<link href='https://fonts.googleapis.com/css?family=Sanchez' rel='stylesheet' type='text/css'>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="./src/functions.js"></script>
+	</head>
