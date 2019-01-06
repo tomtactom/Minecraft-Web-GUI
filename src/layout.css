@@ -30,6 +30,8 @@ header:first-of-type {
 	margin-bottom: -50px;
 	width: 990px;
 	font-size: 30px;
+	font-family: Logo;
+	user-select: none;
 }
 
 #logo h1 {
@@ -40,12 +42,10 @@ header:first-of-type {
 #logo h1:before {
 	content:"MC";   /* Yellow Text */
 	color: yellow;
-	font-family: Logo;
 }
 
 #logo h1:after {
 	content: "Server";  /* Black Text */
-	font-family: Logo;
 }
 
 nav {
@@ -311,16 +311,10 @@ footer {
     width: 80px;
     float: right;
     margin-right: 50px;
-    font-size: 16px;
-    background-color: #ffffff;
-    padding: 10px 5px 10px 5px;
-    border-left: none;
-    border-top: 2px solid #444442;
-    border-bottom: 2px solid #444442;
-    border-right: 2px solid #444442;
-    color: #666666;
-    cursor: pointer;
 }
+input[type=submit],
+input[type=button],
+input[type=reset],
 button {
     margin: 5px;
     font-size: 16px;
@@ -333,4 +327,8 @@ button {
     color: #666666;
     cursor: pointer;
 	user-select: none;
+}
+
+a {
+	color: yellow;
 }
