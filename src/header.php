@@ -15,17 +15,16 @@
 					<?php 
 						} else {
 					?>
-                    <form method="post">
-                        <li>
-                            <input type="email" name="email" placeholder="E-Mail" required><br>
-                            <input type="password" name="passwort" placeholder="Passwort" required>
-                        </li>
-                        <li>
-                            <button type="submit">Login</button>
-                        </li>
-                    </form>
-					<li><a href="./passwort-vergessen"> Passwort vergessen </a></li>
-					<?php } ?>
+					    <form method="post">
+						<li>
+						    <input type="email" name="email" placeholder="E-Mail" required><br>
+						    <input type="password" name="passwort" placeholder="Passwort" required>
+						</li>
+						<li>
+						    <button type="submit">Login</button>
+						</li>
+					    </form>
+				<?php } ?>
 				</ul>
 				<ul class="right">
 					<li class="first"><a href="./minecraft.zip"> Download Minecraft! </a> </li>
