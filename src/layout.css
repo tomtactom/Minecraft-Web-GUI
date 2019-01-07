@@ -357,9 +357,12 @@ nav div ul form li input[type=password] {
 
 nav div ul form li button {
     margin: 0;
-    font-size: 14px;
+    font-size: 12px;
     border-top: none;
     border-bottom: none;
+    background-color: #f3e03b;
+    font-family: Logo;
+    margin-top: 1px;
 }
 
 a {
