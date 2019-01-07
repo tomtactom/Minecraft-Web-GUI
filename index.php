@@ -4,6 +4,7 @@
 ?>
 <main>
     <article>
+        <p><?php echo $error_msg; ?></p>
 
         <!-- Eingeloggte Nutzer -->
         <section class="authorization">
