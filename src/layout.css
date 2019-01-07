@@ -307,12 +307,18 @@ footer {
     border-left: 2px solid #444442;
     border-right: none;
 }
+
 #console input[type=submit] {
     width: 80px;
     float: right;
     margin: 5px !important;
     margin-right: 50px;
 }
+
+input:focus {
+    outline-color: #666;
+}
+
 input[type=submit],
 input[type=button],
 input[type=reset],
@@ -327,24 +333,26 @@ button {
     border-right: 2px solid #444442;
     color: #666666;
     cursor: pointer;
-	user-select: none;
+    user-select: none;
 }
 
 nav div ul form li input[type=email],
 nav div ul form li input[type=password] {
     margin: 0;
-    margin-top: -1px;
+    margin-top: 0.5px;
     padding: 2px 1px 2px 1px;
     border-top: none;
     border-bottom: none;
     border-left: none;
     border-right: none;
-    display: block;
+    background-color: transparent;
+    color: yellow;
+    font-family: Logo;
+    font-size: 11px;
 }
 
 nav div ul form li input[type=password] {
     margin: 0;
-    margin-top: -16px;
 }
 
 nav div ul form li button {
@@ -355,5 +363,5 @@ nav div ul form li button {
 }
 
 a {
-	color: yellow;
+    color: yellow;
 }
