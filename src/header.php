@@ -8,7 +8,6 @@
 			<div id="nav_holder">
 				<ul>
 					<li class="first"><a href=""> Startseite </a> </li>
-					<li><a href="./regeln"> Regeln </a> </li>
 					<li><a href="./hilfe"> Hilfe </a> </li>
 					<?php if(is_checked_in()) { ?>
 					<li><a href="./logout"> Ausloggen </a></li>
