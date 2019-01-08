@@ -57,12 +57,9 @@ function getSiteURL() {
 	$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
 	return $protocol.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/';
 }
-function error($error_msg) {
-	include("templates/head.inc.php");
-	include("templates/header.inc.php");
-	include("templates/error.inc.php");
-	include("templates/footer.inc.php");
-	exit();
+function url_check($url) {
+    $hdrs = @get_headers($url);
+    return is_array($hdrs) ? preg_match('/^HTTP\\/\\d+\\.\\d+\\s+2\\d\\d\\s+.*$/',$hdrs[0]) : false;
 }
 
 	if(isset($_POST['email']) && isset($_POST['passwort'])) {

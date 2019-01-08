@@ -5,50 +5,60 @@
 <main>
     <article>
         <p><?php echo $error_msg; ?></p>
-        <?php if(is_checked_in()) { ?>
-        <!-- Eingeloggte Nutzer -->
-        <section class="authorization">
-            <h1> Die LAN Party kann beginnen! </h1>
-            <!-- Offline Part -->
-            <div class="offline" style="display: none;">
-                <p>Der Server ist momentan offline</p>
-                <form method="post">
-                    <button type="submit" name="start_server">Server starten</button>
-                </form>
-            </div>
-
-            <!-- Online Part -->
-            <div id="console" class="online" style="display: none;">
-                <h2>Befehl an den Server senden:</h2>
-                <form method="post">
-                    <input type="text" placeholder="Gebe einen Befehl ein..." name="command">
-                    <input type="submit" id="sendcommand" value="Senden">
-                </form>
-                <form method="post">
-                    <button type="submit" name="stopp_server">Server stoppen</button>
-                </form>
-                <p id="livelog">
-                    <span id="livelog"></span>
-                </p>
-            </div>
-        </section>
-        <?php } else { ?>
-        <!-- Nicht eingeloggte Nutzer -->
-        <section class="public">
-            <!-- Offline Part -->
-            <div class="offline" style="display: none;">
-                <p>Der Server ist momentan offline.</p>
-            </div>
-            <!-- Online Part -->
-            <div class="online" style="display: none;">
+        <?php
+            if(!url_check("http://nettom.ddnss.de")) {
+                echo 'Bitte fahre den Server auf dem der Minecraft Server läuft manuell hoch.';
+            } else {
+                if(is_checked_in()) { 
+        ?>
+            <!-- Eingeloggte Nutzer -->
+            <section class="authorization">
                 <h1> Die LAN Party kann beginnen! </h1>
-                <p id="livelog">
-                    <span id="livelog"></span>
-                </p>
-            </div>
+                <!-- Offline Part -->
+                <div class="offline" style="display: none;">
+                    <p>Der Server ist momentan offline</p>
+                    <form method="post">
+                        <button type="submit" name="start_server">Server starten</button>
+                    </form>
+                </div>
 
-        </section>
-        <?php } ?>
+                <!-- Online Part -->
+                <div id="console" class="online" style="display: none;">
+                    <h2>Befehl an den Server senden:</h2>
+                    <form method="post">
+                        <input type="text" placeholder="Gebe einen Befehl ein..." name="command">
+                        <input type="submit" id="sendcommand" value="Senden">
+                    </form>
+                    <form method="post">
+                        <button type="submit" name="stopp_server">Server stoppen</button>
+                    </form>
+                    <p id="livelog">
+                        <span id="livelog"></span>
+                    </p>
+                </div>
+            </section>
+            <?php 
+                } else { 
+            ?>
+            <!-- Nicht eingeloggte Nutzer -->
+            <section class="public">
+                <!-- Offline Part -->
+                <div class="offline" style="display: none;">
+                    <p>Der Server ist momentan offline.</p>
+                </div>
+                <!-- Online Part -->
+                <div class="online" style="display: none;">
+                    <h1> Die LAN Party kann beginnen! </h1>
+                    <p id="livelog">
+                        <span id="livelog"></span>
+                    </p>
+                </div>
+
+            </section>
+        <?php 
+                }
+            } 
+        ?>
         <!-- NoInfo Part -->
         <div class="noinfo">
             <p>Bitte warten...</p>
