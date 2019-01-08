@@ -368,3 +368,12 @@ nav div ul form li button {
 a {
     color: yellow;
 }
+
+buttonlink {
+     background: none !important;
+     color: dimgray;
+     border: none; 
+     padding:0!important;
+     font: inherit;
+     cursor: pointer;
+}

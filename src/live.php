@@ -47,13 +47,13 @@
                     <li>
                         <form method="post">
                             <input type="hidden" name="kick" value="kick '.$Player.'">
-                            <button type="submit" id="sendcommandkick'.$Player.'">Kicken</button>
+                            <button type="submit" id="sendcommandkick'.$Player.'" class="buttonlink">Kicken</button>
                         </form>
                     </li>
                     <li>
                         <form method="post">
-                            <input type="hidden" name="kill" value="kill'.$Player.'">
-                            <button type="submit" id="sendcommandkill'.$Player.'">Töten</button>
+                            <input type="hidden" name="kill" value="kill '.$Player.'">
+                            <button type="submit" id="sendcommandkill'.$Player.'" class="buttonlink">Töten</button>
                         </form>
                     </li></ul>';
                     echo '</li>';
