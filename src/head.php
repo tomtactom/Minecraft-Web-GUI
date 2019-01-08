@@ -87,25 +87,13 @@
                 effect:'fade'
             });
         <?php if(is_checked_in()) { ?>
+            //Serverstatus
             $("#serverstatus").load("./src/live.php?serverstatuscontroll=1");
             var serverstatus = setInterval(
             function() {
                 $("#serverstatus").load("./src/live.php?serverstatuscontroll=1");
             }, 10000);
-        <?php } else { ?>
-            $("#serverstatus").load("./src/live.php?serverstatus=1");
-            var serverstatus = setInterval(
-            function() {
-                $("#serverstatus").load("./src/live.php?serverstatus=1");
-            }, 10000);
-        <?php } ?>
             
-            $("#livelog").load("./src/live.php?livelog=1");
-            var livelog = setInterval(
-            function() {
-                $("#livelog").load("./src/live.php?livelog=1");
-            }, 10000);
-
             //Server starten
             $("button[name='start_server']").click(function(e) {
                 e.preventDefault();
@@ -138,6 +126,19 @@
                     commandInput.val('');
                 });
             });
+        <?php } else { ?>
+            $("#serverstatus").load("./src/live.php?serverstatus=1");
+            var serverstatus = setInterval(
+            function() {
+                $("#serverstatus").load("./src/live.php?serverstatus=1");
+            }, 10000);
+        <?php } ?>
+            
+            $("#livelog").load("./src/live.php?livelog=1");
+            var livelog = setInterval(
+            function() {
+                $("#livelog").load("./src/live.php?livelog=1");
+            }, 10000);
             onlinestatus();
             setInterval(onlinestatus, 10000);
         });

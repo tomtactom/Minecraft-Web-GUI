@@ -25,18 +25,35 @@
 			if($Server->Get('numplayers') > 0) {
 				echo '<ul id="players">';
 				foreach($Server->Get('players') as $Player) {
+                    ?>
+                    <script>
+                        $("#sendcommandkick<?php echo $Player; ?>").click(function(e) {
+                            e.preventDefault();
+                            var commandInput = $("input[name='kick']");
+                            $.post('', {command: commandInput.val()}, function() {
+                            });
+                        });
+                        
+                        $("#sendcommandkill<?php echo $Player; ?>").click(function(e) {
+                            e.preventDefault();
+                            var commandInput = $("input[name='kill']");
+                            $.post('', {command: commandInput.val()}, function() {
+                            });
+                        });
+                    </script>
+                    <?php
 					echo '<li>'.$Player;
                     echo '<ul>
                     <li>
                         <form method="post">
                             <input type="hidden" name="kick" value="kick '.$Player.'">
-                            <button type="submit">Kicken</button>
+                            <button type="submit" id="sendcommandkick'.$Player.'">Kicken</button>
                         </form>
                     </li>
                     <li>
                         <form method="post">
-                            <input type="hidden" name="kick" value="kill '.$Player.'">
-                            <button type="submit" name="kill">Töten</button>
+                            <input type="hidden" name="kill" value="kill'.$Player.'">
+                            <button type="submit" id="sendcommandkill'.$Player.'">Töten</button>
                         </form>
                     </li></ul>';
                     echo '</li>';
