@@ -15,7 +15,7 @@
 		$ServerVersion = $Server->Get('version');
 	} else {
 		$ServerName = 'Lan-Party';
-		$ServerVersion = 1.13.2
+		$ServerVersion = "1.13.2";
 	}
     if(is_checked_in()) {
         if(!empty($_POST["command"])) {
