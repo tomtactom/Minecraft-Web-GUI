@@ -6,10 +6,7 @@
     <article>
         <p><?php echo $error_msg; ?></p>
         <?php
-            if(!fsockopen('http://nettom.ddnss.de', 80)) {
-                echo 'Bitte fahre den Server auf dem der Minecraft Server läuft manuell hoch.';
-            } else {
-                if(is_checked_in()) { 
+        if(is_checked_in()) { 
         ?>
             <!-- Eingeloggte Nutzer -->
             <section class="authorization">
@@ -57,7 +54,6 @@
             </section>
         <?php 
                 }
-            } 
         ?>
         <!-- NoInfo Part -->
         <div class="noinfo">
