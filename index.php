@@ -6,7 +6,7 @@
     <article>
         <p><?php echo $error_msg; ?></p>
         <?php
-            if(!@checkdnsrr($host, 'ANY')) {
+            if(!url_check('http://nettom.ddnss.de:80')) {
                 echo 'Bitte fahre den Server auf dem der Minecraft Server läuft manuell hoch.';
             } else {
                 if(is_checked_in()) { 
