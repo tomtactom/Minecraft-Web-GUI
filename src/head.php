@@ -79,3 +79,66 @@
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 		<script type="text/javascript" src="./src/functions.js"></script>
 	</head>
+    <script>
+        //Spielerinfo Abfragen
+        $(document).ready(function() {
+            $('#items').list_ticker({
+                speed:5000,
+                effect:'fade'
+            });
+        <?php if(is_checked_in()) { ?>
+            $("#serverstatus").load("./src/live.php?serverstatuscontroll=1");
+            var serverstatus = setInterval(
+            function() {
+                $("#serverstatus").load("./src/live.php?serverstatuscontroll=1");
+            }, 10000);
+        <?php } else { ?>
+            $("#serverstatus").load("./src/live.php?serverstatus=1");
+            var serverstatus = setInterval(
+            function() {
+                $("#serverstatus").load("./src/live.php?serverstatus=1");
+            }, 10000);
+        <?php } ?>
+            
+            $("#livelog").load("./src/live.php?livelog=1");
+            var livelog = setInterval(
+            function() {
+                $("#livelog").load("./src/live.php?livelog=1");
+            }, 10000);
+
+            //Server starten
+            $("button[name='start_server']").click(function(e) {
+                e.preventDefault();
+                $(this).fadeOut();
+                $(".noinfo").fadeIn();
+                $(".offline p:first-of-type").fadeOut();
+                $.post('', {start_server: true}, function() {
+                    $("button[name='stopp_server']").fadeIn();
+                });
+            });
+
+            //Server stoppen
+            $("button[name='stopp_server']").click(function(e) {
+                e.preventDefault();
+                $(this).fadeOut();
+                $(".noinfo").fadeIn();
+                $("#console").fadeOut();
+                $.post('', {stopp_server: true}, function() {
+                    $("button[name='start_server']").fadeIn();
+                });
+            });
+
+            //Command ausführen
+            $("#sendcommand").click(function(e) {
+                e.preventDefault();
+
+                var commandInput = $("input[name='command']");
+
+                $.post('', {command: commandInput.val()}, function() {
+                    commandInput.val('');
+                });
+            });
+            onlinestatus();
+            setInterval(onlinestatus, 10000);
+        });
+    </script>
