@@ -34,7 +34,7 @@
 			<div class="announcement">
 				<ul id="items">
 					<li>Willkommen auf dem <?php echo $ServerName; ?> Server</li>
-					<li>Lade dir die <a href="./.minecraft.zip">Minecraft.exe</a> herunter</li>
+					<li>Lade dir die <a href="./minecraft.zip">minecraft.zip</a> herunter</li>
 					<li>Benutze immer den gleichen Namen, damit deine Items gespeichert werden.</li>
 					<li>Die Server IP ist: <?php echo $host; ?></li>
 					<li>Starte Minecraft mit der Version <?php echo $ServerVersion; ?></li>
