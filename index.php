@@ -6,7 +6,7 @@
     <article>
         <p><?php echo $error_msg; ?></p>
         <?php
-            if(!url_check(fsockopen('http://nettom.ddnss.de', 80)) {
+            if(!fsockopen('http://nettom.ddnss.de', 80)) {
                 echo 'Bitte fahre den Server auf dem der Minecraft Server läuft manuell hoch.';
             } else {
                 if(is_checked_in()) { 
