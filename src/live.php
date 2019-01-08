@@ -26,7 +26,19 @@
 				echo '<ul id="players">';
 				foreach($Server->Get('players') as $Player) {
 					echo '<li>'.$Player;
-                    echo '<form method="post"><ul><li><button type="submit" name="kick">Kicken</button></li><li><button type="submit" name="kill">Töten</button></li></ul></form>';
+                    echo '<ul>
+                    <li>
+                        <form method="post">
+                            <input type="hidden" name="kick" value="kick '.$Player.'">
+                            <button type="submit">Kicken</button>
+                        </form>
+                    </li>
+                    <li>
+                        <form method="post">
+                            <input type="hidden" name="kick" value="kill '.$Player.'">
+                            <button type="submit" name="kill">Töten</button>
+                        </form>
+                    </li></ul>';
                     echo '</li>';
 				}
 				echo '</ul>';
