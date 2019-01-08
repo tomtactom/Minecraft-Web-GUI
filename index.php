@@ -5,7 +5,7 @@
 <main>
     <article>
         <p><?php echo $error_msg; ?></p>
-
+        <?php if(is_checked_in()) { ?>
         <!-- Eingeloggte Nutzer -->
         <section class="authorization">
             <h1> Die LAN Party kann beginnen! </h1>
@@ -32,23 +32,27 @@
                 </p>
             </div>
         </section>
-
+        <?php } else { ?>
         <!-- Nicht eingeloggte Nutzer -->
         <section class="public">
             <!-- Offline Part -->
             <div class="offline" style="display: none;">
-
+                <p>Der Server ist momentan offline.</p>
             </div>
             <!-- Online Part -->
             <div class="online" style="display: none;">
-
+                <h1> Die LAN Party kann beginnen! </h1>
+                <p id="livelog">
+                    <span id="livelog"></span>
+                </p>
             </div>
 
         </section>
-
+        <?php } ?>
         <!-- NoInfo Part -->
         <div class="noinfo">
             <p>Bitte warten...</p>
+            <noscript>Bitte aktiviere JavaScript in deinem Browser um die Seite Funktionsfähig zu machen.</noscript>
         </div>
 
         <footer>

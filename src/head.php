@@ -17,30 +17,31 @@
 		$ServerName = 'Lan-Party';
 		unset($ServerVersion);
 	}
-
-    if(!empty($_POST["command"])) {
-        if ($rcon->connect()) {
-          $rcon->sendCommand($_POST["command"]);
+    if(is_checked_in()) {
+        if(!empty($_POST["command"])) {
+            if ($rcon->connect()) {
+              $rcon->sendCommand($_POST["command"]);
+            }
         }
-    }
-    if(isset($_POST['start_server'])) {
-        $fp = fsockopen('www.'.$host, 80);
-        if($fp !== false) {
-            $out = "GET /minecraft/start.php HTTP/1.1\r\n";
-            $out .= "Host: www.".$host."\r\n";
-            $out .= "Connection: Close\r\n\r\n";
-            fwrite($fp, $out);
-            fclose($fp);
+        if(isset($_POST['start_server'])) {
+            $fp = fsockopen('www.'.$host, 80);
+            if($fp !== false) {
+                $out = "GET /minecraft/start.php HTTP/1.1\r\n";
+                $out .= "Host: www.".$host."\r\n";
+                $out .= "Connection: Close\r\n\r\n";
+                fwrite($fp, $out);
+                fclose($fp);
+            }
         }
-    }
-    if(isset($_POST['stopp_server'])) {
-        $fp = fsockopen('www.'.$host, 80);
-        if($fp !== false) {
-            $out = "GET /minecraft/stopp.php HTTP/1.1\r\n";
-            $out .= "Host: www.".$host."\r\n";
-            $out .= "Connection: Close\r\n\r\n";
-            fwrite($fp, $out);
-            fclose($fp);
+        if(isset($_POST['stopp_server'])) {
+            $fp = fsockopen('www.'.$host, 80);
+            if($fp !== false) {
+                $out = "GET /minecraft/stopp.php HTTP/1.1\r\n";
+                $out .= "Host: www.".$host."\r\n";
+                $out .= "Connection: Close\r\n\r\n";
+                fwrite($fp, $out);
+                fclose($fp);
+            }
         }
     }
 ?>
@@ -56,8 +57,8 @@
 		<meta name="copyright" content="Tom Aschmann">
 		<meta name="description" content="Spiele auf deinem Minecraft Server und schau dir auf dieser Seite die Statistiken dazu an.">
         <meta name="msapplication-TileColor" content="#8cbeff">
-        <meta name="msapplication-TileImage" content="./src/favicon/ms-icon-144x144.png">
         <meta name="theme-color" content="#8cbeff">
+        <meta name="msapplication-TileImage" content="./src/favicon/ms-icon-144x144.png">
 		<title><?php echo $ServerName; ?> GUI</title>
         <link rel="apple-touch-icon" sizes="57x57" href="./src/favicon/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="./src/favicon/apple-icon-60x60.png">
