@@ -6,6 +6,20 @@
     <article>
         <p><?php echo $error_msg; ?></p>
         <?php
+        $fp = curl_init("http://www.nettom.ddnss.de");
+        curl_setopt($fp,CURLOPT_TIMEOUT,4); // Wie lange versucht wird die Domain zu erreichen
+        curl_setopt($fp,CURLOPT_FAILONERROR,1);
+        curl_setopt($fp,CURLOPT_RETURNTRANSFER,1);
+        curl_exec($fp);
+        if (curl_errno($fp) != 0) 
+        { 
+        echo "Domain ist nicht erreichbar";
+        } 
+        else 
+        { 
+        echo "Domain ist erreichbar";
+        } 
+        curl_close($fp);
         if(is_checked_in()) { 
         ?>
             <!-- Eingeloggte Nutzer -->
