@@ -11,15 +11,9 @@
         curl_setopt($fp,CURLOPT_FAILONERROR,1);
         curl_setopt($fp,CURLOPT_RETURNTRANSFER,1);
         curl_exec($fp);
-        if (curl_errno($fp) != 0) 
-        { 
-        echo "Domain ist nicht erreichbar";
-        } 
-        else 
-        { 
-        echo "Domain ist erreichbar";
-        } 
-        curl_close($fp);
+        if (curl_errno($fp) != 0) { 
+            echo "Der Server um den Minecraft Server zu starten, ist momentan nicht erreichbar, bitte starte ihn manuell.";
+        } else {
         if(is_checked_in()) { 
         ?>
             <!-- Eingeloggte Nutzer -->
@@ -68,6 +62,8 @@
             </section>
         <?php 
                 }
+        }
+        curl_close($fp);
         ?>
         <!-- NoInfo Part -->
         <div class="noinfo">
