@@ -12,7 +12,7 @@
         curl_setopt($fp,CURLOPT_RETURNTRANSFER,1);
         curl_exec($fp);
         if (curl_errno($fp) != 0) { 
-            echo "Der Server um den Minecraft Server zu starten, ist momentan nicht erreichbar, bitte starte ihn manuell.";
+            echo "<big>Der Server um den Minecraft Server zu starten, ist momentan nicht erreichbar, bitte starte ihn manuell.</big>";
         } else {
         if(is_checked_in()) { 
         ?>
@@ -49,7 +49,7 @@
             <section class="public">
                 <!-- Offline Part -->
                 <div class="offline" style="display: none;">
-                    <p>Der Server ist momentan offline.</p>
+                    <p>Der Server ist momentan offline. Er kann von einem Administratoren gestartet werden.</p>
                 </div>
                 <!-- Online Part -->
                 <div class="online" style="display: none;">
