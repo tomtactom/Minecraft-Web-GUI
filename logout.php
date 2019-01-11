@@ -1,5 +1,5 @@
 <?php
-	if(session_destroy()) {
+	if(session_unset()) {
 	unset($_SESSION['userid']);
     if(!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS']!='off' or $_SERVER['SERVER_PORT']==443) $protocol='https://';
     else $protocol='http://';
