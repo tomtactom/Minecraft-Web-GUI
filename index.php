@@ -6,7 +6,7 @@
     <article>
         <p><?php echo $error_msg; ?></p>
         <?php
-        $fp = curl_init("http://www.nettom.ddnss.de");
+        $fp = curl_init("http://www.".$host);
         curl_setopt($fp,CURLOPT_TIMEOUT,4); // Wie lange versucht wird die Domain zu erreichen
         curl_setopt($fp,CURLOPT_FAILONERROR,1);
         curl_setopt($fp,CURLOPT_RETURNTRANSFER,1);
