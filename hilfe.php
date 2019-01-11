@@ -122,9 +122,9 @@
               <th>Benutzername</th>
             </tr>
             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td><i>Momentan existieren</i></td>
+              <td><i>noch keine Account</i></td>
+              <td><i>Daten</i></td>
             </tr>
           </table>
 
