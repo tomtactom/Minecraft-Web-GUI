@@ -13,7 +13,11 @@
               <ul>
                 <li>Minecraft.exe				(Minecraft Cracked Version)</li>
                 <li>MinecraftInstaller.msi		(Offizielle Minecraft Version)</li>
-                <li>MCLeaksAuthenticator.exe		(Programm um Zertifikat zu fälschen)</li>
+                <li>MCLeaksAuthenticator.exe	(Programm um Zertifikat zu fälschen)</li>
+                <li>forge.exe                   (Installationsdatei, um Minecraft mit Mods laufen zu lassen, bzw. um InventoryTweaks als Mod laufen zu lassen)</li>
+                <li>Java_8_32-bit.exe           (Java installation, für 32-bit Systeme (im zweifel das nehmen))</li>
+                <li>Java_8_64-bit.exe           (Java installation, für 64-bit Systeme)</li>
+                <li><i>InventoryTweaks-1.63.jar (Datei, die in den "/.minecraft/mods/" Ordner verschoben werden muss)</i></li>
               </ul>
              </li>
           </ul>
@@ -30,7 +34,7 @@
             <ul>
               <li>Wenn du einen eigenen Minecraft Account besitzt und über diesen spielen möchtest, benötigst du nur die "MinecraftInstaller.msi".</li>
               <li>Führe diese aus und gehe durch den Installationsvorgang.</li>
-              <li>Öffne Minecraft, melde dich an und starte das Spiel auf der neusten Version (Bzw. auf 1.12.2).</li>
+              <li>Öffne Minecraft, melde dich an und starte das Spiel auf der viertneusten Version (Bzw. auf 1.12.2).</li>
               <li>Klicke auf Multiplayer und anschließend auf "Ad Server".</li>
               <li>Beim Servernamen, ist dir der Name selber überlassen.</li>
               <li>Bei der Server Adresse gibst du "nettom.ddnss.de" (ohne Anführungsstriche) ein.</li>
@@ -44,7 +48,7 @@
               <li>Wenn du keinen eigenen Minecraft Account besitzt und du dir deinen Namen selbst aussuchen möchtest, benutze die Datei "Minecraft.exe".</li>
               <li>Diese öffnest du ganz normal. Wenn eine Fehlermeldung auftaucht, wie "Outdated launcher", ignoriere diese und klicke auf "I'm sure. Reset my settings.".</li>
               <li>Gebe anschließend einen Namen deiner Wahl ein, klicke auf "Options" und klicke das Häkchen "Stay Logged In" an. Achte darauf, dass wenn du einmal mit diesem Namen auf dem Server warst, dass du deinen Namen nicht mehr änderst, weil sonnst deine Items verschwinden können.</li>
-              <li>Stelle nun ein, dass du auf der neusten Version (Bzw. Version 1.12.2) spielen möchtest und klicke auf "Play".</li>
+              <li>Stelle nun ein, dass du auf der viertneusten Version (Bzw. Version 1.12.2) spielen möchtest und klicke auf "Play".</li>
               <li>Es kann sein, dass Minecraft abstürzt. Schaue dir dazu die nächste Installationsart an. Das kann besonders bei Windows 10 Geräten mit einem Intel HD Grafikchip passieren, weil dieser nicht so gut mit Windows 10 kompatibel ist.</li>
               <li>Wenn keine Fehlermeldung kommt und sich das Spiel ganz normal öffnet, klicke auf Multiplayer und anschließend auf "Ad Server".</li>
               <li>Beim Servernamen, ist dir der Name selber überlassen.</li>
@@ -64,7 +68,7 @@
               <li>Nun kannst du das Programm wieder schließen und Minecraft starten.</li>
               <li>Im optimalen Falle, müsstest du unter dem Namen angemeldet sein unter dem du dich schon bei dem Punkt "• Du benutzt die Minecraft.exe" probiert hast anzumelden.</li>
               <li>Wenn du nicht angemeldet sein solltest, schaue dir die nächste Installationsart an.</li>
-              <li>Stelle nun ein, dass du auf der neusten Version (Bzw. Version 1.12.2) spielen möchtest und klicke auf "Play".</li>
+              <li>Stelle nun ein, dass du auf der viertneusten Version (Bzw. Version 1.12.2) spielen möchtest und klicke auf "Play".</li>
               <li>Klicke auf Multiplayer und anschließend auf "Ad Server".</li>
               <li>Beim Servernamen, ist dir der Name selber überlassen.</li>
               <li>Bei der Server Adresse gibst du "nettom.ddnss.de" (ohne Anführungsstriche) ein.</li>
@@ -80,7 +84,7 @@
               <li>Diesen kopierst du in die Zwischenablage.</li>
               <li>Gebe beim Benutzeraccount nun den Alt Code ein und irgend ein Passwort.</li>
               <li>Wenn du dich so nicht anmelden kannst, gehe weiter zur letzten Installationsart.</li>
-              <li>Stelle ansonsten nun ein, dass du auf der neusten Version (Bzw. Version 1.12.2) spielen möchtest und klicke auf "Play".</li>
+              <li>Stelle ansonsten nun ein, dass du auf der viertneusten Version (Bzw. Version 1.12.2) spielen möchtest und klicke auf "Play".</li>
               <li>Klicke auf Multiplayer und anschließend auf "Ad Server".</li>
               <li>Beim Servernamen, ist dir der Name selber überlassen.</li>
               <li>Bei der Server Adresse gibst du "nettom.ddnss.de" (ohne Anführungsstriche) ein.</li>
@@ -94,7 +98,7 @@
               <li>Auf der Seite mindecraft.lan-party.ml findest du unter dem Punkt: Hilfe ► Ich habe keinen Minecraft Account, geleakte Daten. Spreche dich allerdings mit anderen Spielern auf dem Server ab, dass ihr nicht die gleichen nehmt, weil ihr euch sonnst gegenseitig raus werft.</li>
               <li>Melde dich damit bei Minecraft an.</li>
               <li>Wenn das nicht klappt, probiere einen anderen Account aus. Wenn es mit keinem aller Accounts klappt, schaue unten bei Hilfe nach.</li>
-              <li>Wenn du dich einloggen konntest, stelle nun ein, dass du auf der neusten Version (Bzw. Version 1.12.2) spielen möchtest und klicke auf "Play".</li>
+              <li>Wenn du dich einloggen konntest, stelle nun ein, dass du auf der viertneusten Version (Bzw. Version 1.12.2) spielen möchtest und klicke auf "Play".</li>
               <li>Klicke auf Multiplayer und anschließend auf "Ad Server".</li>
               <li>Beim Servernamen, ist dir der Name selber überlassen.</li>
               <li>Bei der Server Adresse gibst du "nettom.ddnss.de" (ohne Anführungsstriche) ein.</li>
@@ -111,8 +115,18 @@
             <li>Die Anleitung von oben nach unten Schritt für Schritt durchgehen.</li>
             <li>Java Version überprüfen (Mindestens Version 8).</li>
             <li>den "C:\Users\DEINNUTZERNAME\AppData\Roaming\.minecraft" Ordner löschen.</li>
-            <li>Probieren Minecraft in der Version 1.12.2 zu starten.</li>
+            <li>Probieren Minecraft in der Version 1.13.2 zu starten.</li>
             <li>Wenn das alles nicht hilft, kann es sein, dass dein PC zu schlecht ist.</li>
+            <li>Lasse den Mod bzw. Forge weg.</li>
+          </ul>
+          <h1>Zusatzinstallation</h1>
+          <ul>
+            <li>Um das Spiel einfacher zu gestalten, gibt es die Möglichkeit einen Mod zu installieren, der auch auf dem Server Funktioniert.</li>
+            <li>Das ganze, auf dem Server, ist dann immer noch Minecraft Vanilla, allerdings kannst du durch beispielsweise einen Klick auf dei Taste "R", dein Inventar sortieren.</li>
+            <li>Schließe Minecraft vollständig.</li>
+            <li>Gehe durch den Installationsvorgang der "forge.exe".</li>
+            <li>Öffne anschließend den Ordner "/.minecraft/mods/" und kopiere die Datei "InventoryTweaks-1.63.jar" in diesen Ordner hinein.</li>
+            <li>Starte Minecraft anschließend neu und wähle das Profil "1.12.2-forge1.12.2-14.23.5.2807" aus.</li>
           </ul>
           <h1>Ich habe keinen Minecraft Account</h1>
           <table>
@@ -127,8 +141,6 @@
               <td><i>Daten</i></td>
             </tr>
           </table>
-        
-          <h1></h1>
 
         </section>
         <!-- NoInfo Part -->
