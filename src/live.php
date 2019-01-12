@@ -34,9 +34,9 @@
                             });
                         });
                         
-                        $("#sendcommandkill<?php echo $Player; ?>").click(function(e) {
+                        $("#sendcommandtp_spawn<?php echo $Player; ?>").click(function(e) {
                             e.preventDefault();
-                            var commandInput = $("input[name='kill']");
+                            var commandInput = $("input[name='tp_spawn']");
                             $.post('', {command: commandInput.val()}, function() {
                             });
                         });
@@ -52,8 +52,8 @@
                     </li>
                     <li>
                         <form method="post">
-                            <input type="hidden" name="kill" value="kill '.$Player.'">
-                            <button type="submit" id="sendcommandkill'.$Player.'" class="buttonlink">Töten</button>
+                            <input type="hidden" name="tp_spawn" value="tp '.$Player.' -220 70 62">
+                            <button type="submit" id="sendcommandtp_spawn'.$Player.'" class="buttonlink">Zum Spawn teleportieren</button>
                         </form>
                     </li></ul>';
                     echo '</li>';
