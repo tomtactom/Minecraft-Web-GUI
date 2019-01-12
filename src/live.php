@@ -53,7 +53,7 @@
                     <li>
                         <form method="post">
                             <input type="hidden" name="tp_spawn" value="tp '.$Player.' -220 70 62">
-                            <button type="submit" id="sendcommandtp_spawn'.$Player.'" class="buttonlink">Zum Spawn teleportieren</button>
+                            <button type="submit" id="sendcommandtp_spawn'.$Player.'" class="buttonlink">Respawn</button>
                         </form>
                     </li></ul>';
                     echo '</li>';
