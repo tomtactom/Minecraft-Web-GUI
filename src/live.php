@@ -25,7 +25,7 @@
 			if($Server->Get('numplayers') > 0) {
                 ?>
                 <script>
-                        $("#sendcommandtp_spawn@a").click(function(e) {
+                        $("#sendcommandtp_spawna").click(function(e) {
                             e.preventDefault();
                             var commandInput = $("input[name='tpa_spawn']");
                             $.post('', {command: commandInput.val()}, function() {
@@ -34,7 +34,7 @@
                 </script>
                 <form method="post">
                     <input type="hidden" name="tpa_spawn" value="tp @a 0 ~ 0">
-                    <button type="submit" id="sendcommandtp_spawn@a" class="buttonlink">Respawn</button>
+                    <button type="submit" id="sendcommandtp_spawna" class="buttonlink">Respawn</button>
                 </form>
                 <?php
 				echo '<ul id="players">';
