@@ -25,6 +25,18 @@
 			if($Server->Get('numplayers') > 0) {
                 ?>
                 <script>
+                        $("#sendcommandgamerule").click(function(e) {
+                            e.preventDefault();
+                            var commandInput1 = $("input[name='gamerule_commandBlockOutput']");
+                            $.post('', {command: commandInput.val()}, function() {
+                            });
+                            var commandInput2 = $("input[name='gamerule_doWeatherCycle']");
+                            $.post('', {command: commandInput.val()}, function() {
+                            });
+                            var commandInput3 = $("input[name='setworldspawn']");
+                            $.post('', {command: commandInput.val()}, function() {
+                            });
+                        });
                         $("#sendcommandtp_spawna").click(function(e) {
                             e.preventDefault();
                             var commandInput = $("input[name='tpa_spawn']");
@@ -57,6 +69,14 @@
                         });
                 </script>
                 <ul>
+                    <li>
+                        <form method="post">
+                            <input type="hidden" name="gamerule_commandBlockOutput" value="gamerule commandBlockOutput false">
+                            <input type="hidden" name="gamerule_doWeatherCycle" value="gamerule doWeatherCycle false">
+                            <input type="hidden" name="setworldspawn" value="setworldspawn 0 ~ 0">
+                            <button type="submit" id="sendcommandgamerule" class="buttonlink"><strong>Grundregeln festlegen</strong></button>
+                        </form>
+                    </li>
                     <li>
                         <form method="post">
                             <input type="hidden" name="tpa_spawn" value="tp @a 0 ~ 0">
