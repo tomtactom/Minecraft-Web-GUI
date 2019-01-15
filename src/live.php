@@ -28,13 +28,13 @@
                         $("#sendcommandgamerule").click(function(e) {
                             e.preventDefault();
                             var commandInput1 = $("input[name='gamerule_commandBlockOutput']");
-                            $.post('', {command: commandInput.val()}, function() {
+                            $.post('', {command: commandInput1.val()}, function() {
                             });
                             var commandInput2 = $("input[name='gamerule_doWeatherCycle']");
-                            $.post('', {command: commandInput.val()}, function() {
+                            $.post('', {command: commandInput2.val()}, function() {
                             });
                             var commandInput3 = $("input[name='setworldspawn']");
-                            $.post('', {command: commandInput.val()}, function() {
+                            $.post('', {command: commandInput3.val()}, function() {
                             });
                         });
                         $("#sendcommandtp_spawna").click(function(e) {
