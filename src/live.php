@@ -23,6 +23,18 @@
         if($Server->Get('online') && $Server->Get('maxplayers')) {
 			echo '<p>'.$Server->Get('numplayers').' / '.$Server->Get('maxplayers').' Spieler sind online</p>';
 			if($Server->Get('numplayers') > 0) {
+                echo '<script>
+                        $("#sendcommandtp_spawn@p").click(function(e) {
+                            e.preventDefault();
+                            var commandInput = $("input[name=\'tpa_spawn\']");
+                            $.post('', {command: commandInput.val()}, function() {
+                            });
+                        });
+                </script>'
+                echo '<form method="post">
+                            <input type="hidden" name="tpa_spawn" value="tp @a 0 ~ 0">
+                            <button type="submit" id="sendcommandtp_spawn@a" class="buttonlink">Respawn</button>
+                        </form>';
 				echo '<ul id="players">';
 				foreach($Server->Get('players') as $Player) {
                     ?>
