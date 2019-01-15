@@ -30,7 +30,7 @@
                             $.post('', {command: commandInput.val()}, function() {
                             });
                         });
-                </script>'
+                </script>';
                 echo '<form method="post">
                             <input type="hidden" name="tpa_spawn" value="tp @a 0 ~ 0">
                             <button type="submit" id="sendcommandtp_spawn@a" class="buttonlink">Respawn</button>
