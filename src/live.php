@@ -25,7 +25,7 @@
 			if($Server->Get('numplayers') > 0) {
                 ?>
                 <script>
-                        $("#sendcommandtp_spawn@p").click(function(e) {
+                        $("#sendcommandtp_spawn@a").click(function(e) {
                             e.preventDefault();
                             var commandInput = $("input[name='tpa_spawn']");
                             $.post('', {command: commandInput.val()}, function() {
