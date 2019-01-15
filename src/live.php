@@ -31,11 +31,39 @@
                             $.post('', {command: commandInput.val()}, function() {
                             });
                         });
+                        $("#sendcommandsurvivala").click(function(e) {
+                            e.preventDefault();
+                            var commandInput = $("input[name='gamemode_survivala']");
+                            $.post('', {command: commandInput.val()}, function() {
+                            });
+                        });
+                        $("#sendcommandadventurea").click(function(e) {
+                            e.preventDefault();
+                            var commandInput = $("input[name='gamemode_adventurea']");
+                            $.post('', {command: commandInput.val()}, function() {
+                            });
+                        });
                 </script>
-                <form method="post">
-                    <input type="hidden" name="tpa_spawn" value="tp @a 0 ~ 0">
-                    <button type="submit" id="sendcommandtp_spawna" class="buttonlink">Respawn</button>
-                </form>
+                <ul>
+                    <li>
+                        <form method="post">
+                            <input type="hidden" name="tpa_spawn" value="tp @a 0 ~ 0">
+                            <button type="submit" id="sendcommandtp_spawna" class="buttonlink">Respawn für alle</button>
+                        </form>
+                    </li>
+                    <li>
+                        <form method="post">
+                            <input type="hidden" name="gamemode_survivala" value="gamemode survival @a">
+                            <button type="submit" id="sendcommandsurvivala" class="buttonlink">Survival Mode</button>
+                        </form>
+                    </li>
+                    <li>
+                        <form method="post">
+                            <input type="hidden" name="gamemode_adventurea" value="gamemode adventure @a">
+                            <button type="submit" id="sendcommandadventurea" class="buttonlink">Adventure Mode</button>
+                        </form>
+                    </li>
+                </ul>
                 <?php
 				echo '<ul id="players">';
 				foreach($Server->Get('players') as $Player) {
