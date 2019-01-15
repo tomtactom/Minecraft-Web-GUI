@@ -31,9 +31,27 @@
                             $.post('', {command: commandInput.val()}, function() {
                             });
                         });
-                        $("#sendcommandgamemodea").click(function(e) {
+                        $("#sendcommandsurvivala").click(function(e) {
                             e.preventDefault();
-                            var commandInput = $("input[name='gamemode_all']");
+                            var commandInput = $("input[name='gamemode_survivala']");
+                            $.post('', {command: commandInput.val()}, function() {
+                            });
+                        });
+                        $("#sendcommandcreativea").click(function(e) {
+                            e.preventDefault();
+                            var commandInput = $("input[name='gamemode_creativea']");
+                            $.post('', {command: commandInput.val()}, function() {
+                            });
+                        });
+                        $("#sendcommandadventurea").click(function(e) {
+                            e.preventDefault();
+                            var commandInput = $("input[name='gamemode_adventurea']");
+                            $.post('', {command: commandInput.val()}, function() {
+                            });
+                        });
+                        $("#sendcommandspectatora").click(function(e) {
+                            e.preventDefault();
+                            var commandInput = $("input[name='gamemode_spectatora']");
                             $.post('', {command: commandInput.val()}, function() {
                             });
                         });
@@ -47,19 +65,26 @@
                     </li>
                     <li>
                         <form method="post">
-                            <select name="gamemode_all">
-                                <option value="gamemode survival @a">Überlebensmodus</option>
-                                <option value="gamemode creative @a">Kreativmodus</option>
-                                <option value="gamemode adventure @a">Abenteuermodus</option>
-                                <option value="gamemode spectator @a">Zuschauermodus</option>
-                            </select>
-                            <button type="submit" id="sendcommandgamemodea" class="buttonlink">Survival Mode</button>
+                            <input type="hidden" name="gamemode_survivala" value="gamemode survival @a">
+                            <button type="submit" id="sendcommandsurvivala" class="buttonlink">Überlebensmodus</button>
+                        </form>
+                    </li>
+                    <li>
+                        <form method="post">
+                            <input type="hidden" name="gamemode_creativea" value="gamemode creative @a">
+                            <button type="submit" id="sendcommandcreativea" class="buttonlink">Kreativmodus</button>
                         </form>
                     </li>
                     <li>
                         <form method="post">
                             <input type="hidden" name="gamemode_adventurea" value="gamemode adventure @a">
-                            <button type="submit" id="sendcommandadventurea" class="buttonlink">Adventure Mode</button>
+                            <button type="submit" id="sendcommandadventurea" class="buttonlink">Abenteuermodus</button>
+                        </form>
+                    </li>
+                    <li>
+                        <form method="post">
+                            <input type="hidden" name="gamemode_spectatora" value="gamemode spectator @a">
+                            <button type="submit" id="sendcommandspectatora" class="buttonlink">Zuschauermodus</button>
                         </form>
                     </li>
                 </ul>
