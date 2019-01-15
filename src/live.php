@@ -52,7 +52,7 @@
                     </li>
                     <li>
                         <form method="post">
-                            <input type="hidden" name="tp_spawn" value="tp '.$Player.' -220 70 62">
+                            <input type="hidden" name="tp_spawn" value="tp '.$Player.' 0 ~ 0">
                             <button type="submit" id="sendcommandtp_spawn'.$Player.'" class="buttonlink">Respawn</button>
                         </form>
                     </li></ul>';
