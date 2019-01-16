@@ -27,7 +27,7 @@
             $fp = fsockopen('www.'.$host, 80);
             if($fp !== false) {
                 if(isset($_POST['server_ram']) {
-                    $out = "GET /minecraft/start.php?ram=".$_POST['server_ram']." HTTP/1.1\r\n";
+                    $out = "GET /minecraft/start.php?ram=".trim($_POST['server_ram'])." HTTP/1.1\r\n";
                 } else {
                     $out = "GET /minecraft/start.php HTTP/1.1\r\n";
                 }
