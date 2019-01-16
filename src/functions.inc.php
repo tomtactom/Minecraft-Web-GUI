@@ -82,7 +82,7 @@ function url_check($url) {
 			header('location: '.getSiteURL());
 			exit;
 		} else {
-			$error_msg =  "E-Mail oder Passwort war ungültig<br><br>";
+			$error_msg =  "E-Mail oder Passwort war ungültig<br>";
 		}
 
 	}

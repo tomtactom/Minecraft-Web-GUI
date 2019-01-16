@@ -26,7 +26,11 @@
         if(isset($_POST['start_server'])) {
             $fp = fsockopen('www.'.$host, 80);
             if($fp !== false) {
-                $out = "GET /minecraft/start.php HTTP/1.1\r\n";
+                if(isset($_POST['server_ram']) {
+                    $out = "GET /minecraft/start.php?ram=".$_POST['server_ram']." HTTP/1.1\r\n";
+                } else {
+                    $out = "GET /minecraft/start.php HTTP/1.1\r\n";
+                }
                 $out .= "Host: www.".$host."\r\n";
                 $out .= "Connection: Close\r\n\r\n";
                 fwrite($fp, $out);
