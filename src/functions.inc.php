@@ -73,13 +73,19 @@ function url_check($url) {
 		//Überprüfung des Passworts
 		if ($user !== false && password_verify($passwort, $user['passwort'])) {
 			$_SESSION['userid'] = $user['id'];
-            $identifier = random_string();
-            $securitytoken = random_string();
-            $insert = $pdo->prepare("INSERT INTO securitytokens (user_id, identifier, securitytoken) VALUES (:user_id, :identifier, :securitytoken)");
-            $insert->execute(array('user_id' => $user['id'], 'identifier' => $identifier, 'securitytoken' => sha1($securitytoken)));
-            setcookie("identifier",$identifier,time()+(3600*24*365)); //Valid for 1 year
-            setcookie("securitytoken",$securitytoken,time()+(3600*24*365)); //Valid for 1 year
-			header('location: '.getSiteURL());
+
+			//Soll der Benutzer angemeldet beleiben?
+			if(isset($_POST['angemeldet_bleiben'])) {
+				$identifier = random_string();
+				$securitytoken = random_string();
+					
+				$insert = $pdo->prepare("INSERT INTO securitytokens (user_id, identifier, securitytoken) VALUES (:user_id, :identifier, :securitytoken)");
+				$insert->execute(array('user_id' => $user['id'], 'identifier' => $identifier, 'securitytoken' => sha1($securitytoken)));
+				setcookie("identifier",$identifier,time()+(3600*24*365)); //Valid for 1 year
+				setcookie("securitytoken",$securitytoken,time()+(3600*24*365)); //Valid for 1 year
+			}
+
+			header('location: index.php');
 			exit;
 		} else {
 			$error_msg =  "E-Mail oder Passwort war ungültig<br>";
