@@ -102,6 +102,7 @@
             $("button[name='start_server']").click(function(e) {
                 e.preventDefault();
                 $(this).fadeOut();
+                $("input[name='server_ram']").fadeOut();
                 $(".noinfo").fadeIn();
                 $(".offline p:first-of-type").fadeOut();
                 $.post('', {start_server: true}, function() {
@@ -113,6 +114,7 @@
             $("button[name='stopp_server']").click(function(e) {
                 e.preventDefault();
                 $(this).fadeOut();
+                $("input[name='server_ram']").fadeIn();
                 $(".noinfo").fadeIn();
                 $("#console").fadeOut();
                 $.post('', {stopp_server: true}, function() {
