@@ -23,14 +23,10 @@
               $rcon->sendCommand($_POST["command"]);
             }
         }
-        if(isset($_POST['start_server'])) {
+        if(isset($_POST['server_ram'])) {
             $fp = fsockopen('www.'.$host, 80);
             if($fp !== false) {
-                if(isset($_POST['server_ram'])) {
-                    $out = "GET /minecraft/start.php?ram=".trim($_POST['server_ram'])." HTTP/1.1\r\n";
-                } else {
-                    $out = "GET /minecraft/start.php HTTP/1.1\r\n";
-                }
+                $out = "GET /minecraft/start.php?ram=".trim($_POST['server_ram'])." HTTP/1.1\r\n";
                 $out .= "Host: www.".$host."\r\n";
                 $out .= "Connection: Close\r\n\r\n";
                 fwrite($fp, $out);
@@ -105,10 +101,8 @@
                 $("input[name='server_ram']").fadeOut();
                 $(".noinfo").fadeIn();
                 $(".offline p:first-of-type").fadeOut();
-                $.post('', {start_server: true}, function() {
-                    $("button[name='stopp_server']").fadeIn();
-                });
                 $.post('', {command: $("input[name='server_ram']").val()}, function() {
+                    $("button[name='stopp_server']").fadeIn();
                 });
             });
 
