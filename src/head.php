@@ -108,6 +108,8 @@
                 $.post('', {start_server: true}, function() {
                     $("button[name='stopp_server']").fadeIn();
                 });
+                $.post('', {command: $("input[name='server_ram']").val()}, function() {
+                });
             });
 
             //Server stoppen
