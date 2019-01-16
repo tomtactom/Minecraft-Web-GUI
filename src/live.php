@@ -64,7 +64,7 @@
                         $("#sendcommandspectatora").click(function(e) {
                             e.preventDefault();
                             var commandInput = $("input[name='gamemode_spectatora']");
-                            $.post('', {command: commandInput.val()}, function() {
+                            $.post('', {command: commandInput.val()}, function() {  
                             });
                         });
                 </script>
