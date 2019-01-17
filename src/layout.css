@@ -60,6 +60,7 @@ nav {
 	position: relative;
 	z-index: 9999;
 	user-select: none;
+    display: flex;
 }
 
 #nav_holder {
@@ -180,7 +181,7 @@ header:nth-of-type(2) {
 	height:0px;
 	width:0px;
 	position: relative;
-	left: 974px;
+	    left: 101.5%;
 	top: 27px;
 	z-index: -1; 
 }
