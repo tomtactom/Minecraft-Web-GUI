@@ -158,18 +158,16 @@ header:nth-of-type(2) {
     width: 15px;
     position: relative;
     left: 100%;
-    top: 27px;
-    z-index: -1;
+    top: 20px;
 }
 
 .announcement_block-r {
     background: #7f9db9;
-    height: 0px;
-    width: 0px;
+    height: 50px;
+    width: 15px;
     position: relative;
     left: -44px;
-    top: 27px;
-    z-index: -1;
+    top: 20px;
 }
 
 .announcement ul#items {
