@@ -26,7 +26,7 @@
         if(isset($_POST['server_ram'])) {
             $fp = fsockopen('www.'.$host, 80);
             if($fp !== false) {
-                $out = "GET /minecraft/start.php?ram=".trim($_POST['server_ram'])." HTTP/1.1\r\n";
+                $out = "GET /minecraft/start.php?ram=".$_POST['server_ram']." HTTP/1.1\r\n";
                 $out .= "Host: www.".$host."\r\n";
                 $out .= "Connection: Close\r\n\r\n";
                 fwrite($fp, $out);
@@ -101,8 +101,8 @@
                 $("input[name='server_ram']").fadeOut();
                 $(".noinfo").fadeIn();
                 $(".offline p:first-of-type").fadeOut();
-                $.post('', {command: $("input[name='server_ram']").val()}, function() {
-                    $("button[name='stopp_server']").fadeIn();
+                var commandInput = $("input[name='server_ram']");
+                $.post('', {command: commandInput.val()}, function() {
                 });
             });
 
