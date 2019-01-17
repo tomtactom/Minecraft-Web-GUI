@@ -153,9 +153,6 @@ header:nth-of-type(2) {
 }
 
 .announcement_block-l {
-    border-color: transparent transparent transparent #7d90a3;
-    border-style: solid;
-    border-width: 15px;
     height: 50px;
     width: 15px;
     position: relative;
@@ -165,9 +162,6 @@ header:nth-of-type(2) {
 }
 
 .announcement_block-r {
-    border-color: transparent transparent transparent #7d90a3;
-    border-style: solid;
-    border-width: 15px;
     height: 0px;
     width: 0px;
     position: relative;
