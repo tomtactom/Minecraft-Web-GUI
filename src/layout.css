@@ -152,15 +152,28 @@ header:nth-of-type(2) {
     z-index: 100;
 }
 
-.announcement_block {
-    background: #7f9db9;
-    margin: 0px auto;
+.announcement_block-l {
+    border-color: transparent transparent transparent #7d90a3;
+    border-style: solid;
+    border-width: 15px;
     height: 50px;
     width: 15px;
     position: relative;
-    float: left;
-    z-index: 100;
-    display: -webkit-box;
+    left: 100%;
+    top: 27px;
+    z-index: -1;
+}
+
+.announcement_block-r {
+    border-color: transparent transparent transparent #7d90a3;
+    border-style: solid;
+    border-width: 15px;
+    height: 0px;
+    width: 0px;
+    position: relative;
+    left: -44px;
+    top: 27px;
+    z-index: -1;
 }
 
 .announcement ul#items {
