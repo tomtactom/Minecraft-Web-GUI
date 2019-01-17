@@ -93,7 +93,7 @@
             function() {
                 $("#serverstatus").load("./src/live.php?serverstatuscontroll=1");
             }, 10000);
-            
+            /*
             //Server starten
             $("#start_server").click(function(e) {
                 e.preventDefault();
@@ -105,7 +105,7 @@
                 $.post('', {command: commandInput.val()}, function() {
                 });
             });
-
+            */
             //Server stoppen
             $("button[name='stopp_server']").click(function(e) {
                 e.preventDefault();
