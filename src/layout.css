@@ -146,7 +146,6 @@ header:nth-of-type(2) {
     width: 1020px;
     max-width: 100%;
     position: relative;
-    left: -3%;
     top: 20px;
     float: left;
     z-index: 100;

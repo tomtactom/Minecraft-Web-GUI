@@ -31,6 +31,7 @@
 			</div>
 		</nav>
 		<header>
+            <div class="announcement_block-l"></div>
 			<div class="announcement">
 				<ul id="items">
 					<li>Willkommen auf dem <?php echo $ServerName; ?> Server</li>
@@ -40,7 +41,6 @@
 					<li>Starte Minecraft mit der Version <?php echo $ServerVersion; ?></li>
 				</ul>
 			</div>
-            <div class="announcement_block-l"></div>
             <div class="announcement_block-r"></div>
 			<div class="triangle-l"></div>
 			<div class="triangle-r"></div>
