@@ -95,7 +95,7 @@
             }, 10000);
             
             //Server starten
-            $("button[name='start_server']").click(function(e) {
+            $("#start_server").click(function(e) {
                 e.preventDefault();
                 $(this).fadeOut();
                 $("input[name='server_ram']").fadeOut();
