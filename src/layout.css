@@ -144,10 +144,20 @@ header:nth-of-type(2) {
     margin: 0px auto;
     height: 50px;
     width: 1020px;
-    max-width: 106%;
+    max-width: 100%;
     position: relative;
     left: -3%;
     top: 20px;
+    float: left;
+    z-index: 100;
+}
+
+.announcement_block {
+    background: #7f9db9;
+    margin: 0px auto;
+    height: 50px;
+    width: 15px;
+    position: relative;
     float: left;
     z-index: 100;
     display: -webkit-box;
@@ -181,7 +191,7 @@ header:nth-of-type(2) {
 	height:0px;
 	width:0px;
 	position: relative;
-	    left: 101.5%;
+    left: 101.5%;
 	top: 27px;
 	z-index: -1; 
 }
