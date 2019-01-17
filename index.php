@@ -25,7 +25,9 @@
             <div class="offline" style="display: none;">
                 <p>Der Server ist momentan offline</p>
                 <form method="post">
-                    <input type="range" name="server_ram" min="128" max="3072" value="1535">
+                    <label>
+                        <input type="range" name="server_ram" min="128" max="3072" value="1535" title="Server Ram">
+                    </label>
                     <button type="submit" id="start_server">Sever starten</button>
                 </form>
             </div>
