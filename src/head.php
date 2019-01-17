@@ -93,7 +93,7 @@
             function() {
                 $("#serverstatus").load("./src/live.php?serverstatuscontroll=1");
             }, 10000);
-            /*
+
             //Server starten
             $("#start_server").click(function(e) {
                 e.preventDefault();
@@ -102,10 +102,19 @@
                 $(".noinfo").fadeIn();
                 $(".offline p:first-of-type").fadeOut();
                 var commandInput = $("input[name='server_ram']");
-                $.post('', {command: commandInput.val()}, function() {
+                $.post('', {server_ram: commandInput.val()}, function() {
+                });
+            });
+            
+            /*
+            $("#start_server").click(function(e) {
+                e.preventDefault();
+                var commandInput = $("input[name='server_ram']");
+                $.post('', {server_ram: commandInput.val()}, function() {
                 });
             });
             */
+            
             //Server stoppen
             $("button[name='stopp_server']").click(function(e) {
                 e.preventDefault();
