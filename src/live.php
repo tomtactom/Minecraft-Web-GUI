@@ -133,7 +133,7 @@
                             <button type="submit" id="sendcommandspectatora" class="buttonlink">Zuschauermodus</button>
                         </form>
                     </li>
-                    <li>Schwierigkeit: 
+                    <li><i>Schwierigkeit: </i>
                         <ul>
                             <li>
                                 <form method="post">
