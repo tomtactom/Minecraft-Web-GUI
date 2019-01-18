@@ -209,6 +209,10 @@ main {
 }
 
 aside {
+    position: relative;
+}
+
+aside div {
 	margin-bottom: 10px;
 	border-radius: 10px;
 	border-top: 2px inset black;
@@ -216,19 +220,18 @@ aside {
 	background-image:url(./sidebar.png);
 	width: 249px;
 	float: left;
-    position: relative;
 }
 
-aside h1,h2,h3,h4,h5,h6,p{
+aside div h1,h2,h3,h4,h5,h6,p{
 	padding-left: 20px;
 	font-family: 'Sanchez', serif;
 }
 
-aside h3.address {
+aside div h3.address {
 	margin-bottom: -10px;
 }
 
-aside div.online {
+aside div div.online {
 	float: right;
 	margin-right: 40px;
 	margin-top: -36px;;
@@ -239,7 +242,7 @@ aside div.online {
 	box-shadow: 0px 0px 2px 2px green;
 }
 
-aside div.offline {
+aside div div.offline {
 	float: right;
 	margin-right: 40px;
 	margin-top: -36px;;
@@ -250,7 +253,7 @@ aside div.offline {
 	box-shadow: 0px 0px 2px 2px red;
 }
 
-aside p.address {
+aside div p.address {
 	color: green;
 }
 

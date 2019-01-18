@@ -82,17 +82,19 @@
         </footer>
     </article>
     <aside>
-        <h3 class="address">Serveradresse</h3>
-        <p class="address">
-            <?php echo $host; ?>
-        </p>
-    </aside>
-    <aside>
+        <div>
+            <h3 class="address">Serveradresse</h3>
+            <p class="address">
+                <?php echo $host; ?>
+            </p>
+        </div>
+        <div>
         <h3>Server Status: </h3>
         <div class="online"></div>
         <span id="serverstatus" class="online"></span>
         <div class="offline"></div>
         <p class="offline">Der Server ist momentan Offline</p>
+        </div>
     </aside>
 </main>
 <?php
