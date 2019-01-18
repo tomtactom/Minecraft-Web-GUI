@@ -391,7 +391,7 @@ a {
         max-width: 70%;
     }
     input[type=text] {
-        width: unset;
+        width: unset !important;
         max-width: 100%;
         margin-left: 0 !important;
         margin: 0 auto;
