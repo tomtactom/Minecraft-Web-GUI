@@ -219,7 +219,6 @@ aside section {
 	border-bottom: 2px outset black;
 	background-image:url(./sidebar.png);
 	width: 249px;
-	float: left;
 }
 
 aside section h1,h2,h3,h4,h5,h6,p{
