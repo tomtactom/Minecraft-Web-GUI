@@ -390,7 +390,7 @@ a {
     header:nth-of-type(2) {
         max-width: 70%;
     }
-    input[name=text] {
+    input[type=text] {
         max-width: 100%;
         margin: 0 auto;
     }
