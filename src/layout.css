@@ -212,7 +212,7 @@ aside {
     position: relative;
 }
 
-aside div {
+aside section {
 	margin-bottom: 10px;
 	border-radius: 10px;
 	border-top: 2px inset black;
@@ -222,16 +222,16 @@ aside div {
 	float: left;
 }
 
-aside div h1,h2,h3,h4,h5,h6,p{
+aside section h1,h2,h3,h4,h5,h6,p{
 	padding-left: 20px;
 	font-family: 'Sanchez', serif;
 }
 
-aside div h3.address {
+aside section h3.address {
 	margin-bottom: -10px;
 }
 
-aside div div.online {
+aside section div.online {
 	float: right;
 	margin-right: 40px;
 	margin-top: -36px;;
@@ -242,7 +242,7 @@ aside div div.online {
 	box-shadow: 0px 0px 2px 2px green;
 }
 
-aside div div.offline {
+aside section div.offline {
 	float: right;
 	margin-right: 40px;
 	margin-top: -36px;;
@@ -253,7 +253,7 @@ aside div div.offline {
 	box-shadow: 0px 0px 2px 2px red;
 }
 
-aside div p.address {
+aside section p.address {
 	color: green;
 }
 
