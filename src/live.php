@@ -67,6 +67,14 @@
                             $.post('', {command: commandInput.val()}, function() {  
                             });
                         });
+                        
+                        //Schwierigkeitsgrad
+                        $("#sendcommand").click(function(e) {
+                            e.preventDefault();
+                            var commandInput = $("input[name='']");
+                            $.post('', {command: commandInput.val()}, function() {  
+                            });
+                        });
                 </script>
                 <ul>
                     <li>
@@ -106,6 +114,34 @@
                             <input type="hidden" name="gamemode_spectatora" value="gamemode spectator @a">
                             <button type="submit" id="sendcommandspectatora" class="buttonlink">Zuschauermodus</button>
                         </form>
+                    </li>
+                    <li>Schwierigkeit: 
+                        <ul>
+                            <li>
+                                <form method="post">
+                                    <input type="hidden" name="difficultypeaceful" value="difficulty peaceful">
+                                    <button type="submit" id="sendcommanddifficultypeaceful" class="buttonlink">Friedlich</button>
+                                </form>
+                            </li>
+                            <li>
+                                <form method="post">
+                                    <input type="hidden" name="difficultyeasy" value="difficulty easy">
+                                    <button type="submit" id="sendcommanddifficultyeasy" class="buttonlink">Einfach</button>
+                                </form>
+                            </li>
+                            <li>
+                                <form method="post">
+                                    <input type="hidden" name="difficultynormal" value="difficulty normal">
+                                    <button type="submit" id="sendcommanddifficultynormal" class="buttonlink">Normal</button>
+                                </form>
+                            </li>
+                            <li>
+                                <form method="post">
+                                    <input type="hidden" name="difficultyhard" value="difficulty hard">
+                                    <button type="submit" id="sendcommanddifficultyhard" class="buttonlink">Schwer</button>
+                                </form>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
                 <?php
