@@ -69,9 +69,27 @@
                         });
                         
                         //Schwierigkeitsgrad
-                        $("#sendcommand").click(function(e) {
+                        $("#sendcommanddifficultypeaceful").click(function(e) {
                             e.preventDefault();
-                            var commandInput = $("input[name='']");
+                            var commandInput = $("input[name='difficultypeaceful']");
+                            $.post('', {command: commandInput.val()}, function() {  
+                            });
+                        });
+                        $("#sendcommanddifficultyeasy").click(function(e) {
+                            e.preventDefault();
+                            var commandInput = $("input[name='difficultyeasy']");
+                            $.post('', {command: commandInput.val()}, function() {  
+                            });
+                        });
+                        $("#sendcommanddifficultynormal").click(function(e) {
+                            e.preventDefault();
+                            var commandInput = $("input[name='difficultynormal']");
+                            $.post('', {command: commandInput.val()}, function() {  
+                            });
+                        });
+                        $("#sendcommanddifficultyhard").click(function(e) {
+                            e.preventDefault();
+                            var commandInput = $("input[name='difficultyhard']");
                             $.post('', {command: commandInput.val()}, function() {  
                             });
                         });
