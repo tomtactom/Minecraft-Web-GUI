@@ -381,7 +381,9 @@ a {
 
 @media only screen and (max-width: 830px) {
     header div#logo h1 {
-            display: table-caption;
+        display: table-caption;
+        text-align: center;
+        margin-left: 20px;
     }
 }
 
