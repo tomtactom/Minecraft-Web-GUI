@@ -392,6 +392,7 @@ a {
     }
     input[type=text] {
         max-width: 100%;
+        margin-left: 0;
         margin: 0 auto;
     }
 }
