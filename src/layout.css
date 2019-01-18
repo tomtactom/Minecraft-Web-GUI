@@ -383,3 +383,14 @@ a {
      font: inherit;
      cursor: pointer;
 }
+
+@media only screen and (max-width: 830px) {
+    header div#logo h1 {
+        display: none;
+    }
+    #logo h1:before {
+        content:"MC";
+        color: yellow;
+        text-align: center;
+    }
+}
