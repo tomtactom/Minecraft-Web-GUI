@@ -385,3 +385,13 @@ a {
             display: table-caption;
     }
 }
+
+@media only screen and (max-width: 560px) {
+    header:nth-of-type(2) {
+        max-width: 70%;
+    }
+    input[name=text] {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+}
