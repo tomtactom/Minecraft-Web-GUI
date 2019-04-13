@@ -41,7 +41,8 @@
                 <p>Der Server ist momentan offline</p>
                 <form method="post">
                     <label>
-                        <input type="range" name="server_ram" min="128" max="3072" value="1535" title="Server Ram">
+                        <!--<input type="range" name="server_ram" min="128" max="3072" value="1535" title="Server Ram">-->
+                        <input type="text" name="server_ram" title="Server Ram" value="1535" min="128" maxlength="10">
                     </label>
                     <button type="submit" id="start_server">Sever starten</button>
                 </form>
