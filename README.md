@@ -5,12 +5,12 @@ minecraft-web-GUI ist eine Webseite im Minecraft Design, die dafür ausgelegt is
 
 ## Prerequisites
 
-• PHP 7
-• Apache 24
-• Offene Ports (80, (ggf. 433), 25575, 25565)
-• MySQL
-• Empfohlen: Linux System
-• Empfohlen: Git
+* PHP 7
+* Apache 24
+* Offene Ports (80, (ggf. 433), 25575, 25565)
+* MySQL
+* Empfohlen: Linux System
+* Empfohlen: Git
 
 Zweiten Server mit Windows System auf dem das Repo "server-for-minecraft-web-GUI" installiert ist
 
@@ -67,7 +67,7 @@ Empfohlen: Erstelle im root Verzeichnis eine Datei mit dem Namen hilfe.inc.php. 
 
 Jetzt kann die Seite auch schon verwendet werden. Sollten fehler auftreten, beschreibe den Fehler so genau wie möglich als Issue.
 
-## Running the tests
+## Running the Server
 
 Rufe die Internetseite ganz normal auf.
 Melde dich an und warte ein paar Sekunden.
