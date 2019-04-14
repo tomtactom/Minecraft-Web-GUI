@@ -1,4 +1,4 @@
-# minecraft-web-GUI
+# Minecraft Web GUI
 Verwalte deinen Minecraft Java Server über Rcon auf deiner Webseite. Starte und stoppe den Server, lasse dir anzeigen, wer sich gerade auf dem Server befindet und gebe Minecraft Befehle ein, die in Echtzeit im Spiel ausgeführt werden.
 minecraft-web-GUI ist eine Webseite im Minecraft Design, die dafür ausgelegt ist eigene Minecraft Server (die auf Windows) laufen zu verwalten. Dafür muss auf dem Server auf dem die Daten dieses Repositorys liegen kein Windows Server sein und auch nicht der gleiche Server sein.
 
@@ -11,11 +11,11 @@ minecraft-web-GUI ist eine Webseite im Minecraft Design, die dafür ausgelegt is
 * Empfohlen: Linux System
 * Empfohlen: Git
 
-Zweiten Server mit Windows System auf dem das Repositorys "server-for-minecraft-web-GUI" installiert ist
+Zweiten Server mit Windows System auf dem das Repositorys ["server-for-minecraft-web-GUI"](https://github.com/12tom12/server-for-minecraft-web-GUI) installiert ist.
 
 ## Getting Started
 
-Installiere zuerst auf deinem Windows-Server das Repository "server-for-minecraft-web-GUI" und folge auch dort der Installationsanleitung.
+Installiere zuerst auf deinem Windows-Server das Repository ["server-for-minecraft-web-GUI"](https://github.com/12tom12/server-for-minecraft-web-GUI) und folge auch dort der Installationsanleitung.
 
 Empfohlen: bei Server mit GIT: Baue eine dauerhafte Pull Verbindung zwischen dem Repository und deinem Server auf.
 Anders: bei Server ohne GIT: Lade dir das Repository als Zip Datei herunter.
@@ -51,13 +51,13 @@ Fülle die jeweiligen leeren Strings aus.
 
 Im Stammverzeichnis des Repositorys findest du die Datei "database.sql".
 Erstelle eine neue Datenbank mit dem Datenbanknamen: "mc_login", auf die dein angegebener MySQL Benutzer Zugriff hat.
-Importiere die Datei "database.sql". Das geht entweder mit phpmyadmin: https://www.phpmyadmin.net/ oder suche dir selber im Internet raus, wie es geht.
+Importiere die Datei "database.sql". Das geht entweder mit [phpmyadmin](https://www.phpmyadmin.net/) oder suche dir selber im Internet raus, wie es geht.
 Die normalen Nutzerdaten sind jetzt:
 E-Mail-Adresse: mail@example.com
 Passwort: start
 
 Ändere aus Sicherheitsgründen diese Zugangsdaten sofort. Das geht auch am besten über die GUI von phpmyadmin.
-Die E-Mail-Adresse wird unverschlüsselt gespeichert und kann demnach auch ganz einfach geändert werden. Das Passwort ist ein password_hash(). Den kann man z. B. unter https://www.php-einfach.de/diverses/md5-sha1-hash-generator/ generieren.
+Die E-Mail-Adresse wird unverschlüsselt gespeichert und kann demnach auch ganz einfach geändert werden. Das Passwort ist ein password_hash(). Den kann man z. B. unter [phpeinfach](https://www.php-einfach.de/diverses/md5-sha1-hash-generator/) generieren.
 
 Der Vor- und Nachname kann selbstverständlich auch geändert werden oder es können auch zusätzliche Accounts manuell angelegt werden.
 
@@ -91,7 +91,7 @@ Die Ports sind nicht geöffnet.
 Lösung: Öffne die Ports in der Windows Firewall, ggf. im Antivirus Programm und in deinem Router.
 
 Es wurde keine Verbindung zwischen der IP-Adresse des Windows-Servers und der Dynamik-DNS hergestellt.
-Lösung: Benutze am besten Anbieter wie https://ddnss.de und folge der richtigen Anleitung. Empfohlen sind Router wie Fritzbox usw. Schaue Dort unter Internet &gt; Freigabe &gt; Dynamische DNS, ob alles richtig eingestellt ist.
+Lösung: Benutze am besten Anbieter wie [DDNSS](https://ddnss.de) und folge der richtigen Anleitung. Empfohlen sind Router wie [Fritzbox](https://avm.de/produkte/fritzbox/) usw. Schaue [Dort](http://fritz.box/) unter Internet &gt; Freigabe &gt; Dynamische DNS, ob alles richtig eingestellt ist.
 
 Wenn alles nicht klappt, erstelle eine Issue.
 
