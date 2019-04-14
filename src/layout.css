@@ -279,6 +279,7 @@ article {
     max-width: 100%;
     color: #999;
     position: relative;
+    padding: 10px;
 }
 
 article h1,
@@ -443,6 +444,10 @@ a {
 @media only screen and (max-width: 380px) {
     .announcement ul#items li {
         font-size: 0.8rem;
+    }
+
+    .triangle-r {
+        left: 105%;
     }
 }
 
