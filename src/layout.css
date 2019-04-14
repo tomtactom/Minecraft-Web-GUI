@@ -175,7 +175,7 @@ header:nth-of-type(2) {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-.announcment ul#items li {
+.announcement ul#items li {
     background: #7f9db9;
     border-radius: 1.5px;
 }
@@ -399,11 +399,27 @@ a {
     cursor: pointer;
 }
 
+@media only screen and (max-width: 1200px) {
+    .announcement ul#items li {
+        font-size: 1.27rem;
+    }
+}
+
 @media only screen and (max-width: 830px) {
     header div#logo h1 {
         display: table-caption;
         text-align: center;
         margin-left: 20px;
+    }
+
+    .announcement ul#items li {
+        font-size: 1.12rem;
+    }
+}
+
+@media only screen and (max-width: 630px) {
+    #nav_holder ul.right {
+        display: none;
     }
 }
 
@@ -418,10 +434,32 @@ a {
         margin-left: 0 !important;
         margin: 0 auto;
     }
+
+    .announcement ul#items li {
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .announcement ul#items li {
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    .announcement ul#items li {
+        font-size: 0.73rem;
+    }
 }
 
 @media only screen and (max-width: 300px) {
     aside section {
         width: 200px;
+    }
+}
+
+@media only screen and (max-width: 245px) {
+    .announcement ul#items li {
+        font-size: 0.61rem;
     }
 }
