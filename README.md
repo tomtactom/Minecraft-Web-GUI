@@ -67,6 +67,8 @@ Empfohlen: Erstelle im root Verzeichnis eine Datei mit dem Namen hilfe.inc.php. 
 
 Jetzt kann die Seite auch schon verwendet werden. Sollten fehler auftreten, beschreibe den Fehler so genau wie möglich als Issue.
 
+Erstelle noch eine minecraft.zip Datei in deinem Stammverzeichnis, in der du alle nötigen Dateien, herinpackst, die Nutzer brauchen könnten um auf deinem Server zu spielen.
+
 ## Running the Server
 
 Rufe die Internetseite ganz normal auf.
