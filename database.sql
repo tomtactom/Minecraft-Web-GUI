@@ -15,6 +15,9 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`), UNIQUE (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--- Beispieldaten (Bitte vorher ändern) | E-Mail: mail@example.com | Passwort: start | password_hash() generieren z.B. unter https://www.php-einfach.de/diverses/md5-sha1-hash-generator/
+INSERT INTO `users` (`id`, `email`, `passwort`, `vorname`, `nachname`, `created_at`, `updated_at`, `passwortcode`, `passwortcode_time`) VALUES
+(1, 'mail@example.com', '$2y$10$qDQP5Q7g..MwgsTU6U.cg.rUUtolJLiVvUwReLx1CPI/QxF1C.aBC', 'Max', 'Mustermann', '2000-01-01 01:00:00', NULL, NULL, NULL);
 
 CREATE TABLE `securitytokens` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,

@@ -11,6 +11,7 @@
 	                <li><a href="./hilfe"> <big>ℹ️</big> </a> </li>
 	                <?php if(is_checked_in()) { ?>
 	                <li><a href="./logout"> Ausloggen </a></li>
+	                <li><a href="./settings"> Einstellungen </a></li>
 	                <?php 
 						} else {
 					?>
