@@ -23,15 +23,15 @@
             <?php echo $error_msg; ?>
         </p>
         <?php
-        $fp = curl_init("http://www.".$host);
+        $fp = curl_init("http://".$host);
         curl_setopt($fp,CURLOPT_TIMEOUT,4);
         curl_setopt($fp,CURLOPT_FAILONERROR,1);
         curl_setopt($fp,CURLOPT_RETURNTRANSFER,1);
         curl_exec($fp);
-        if (curl_errno($fp) != 0) { 
+        if (curl_errno($fp) != 0) {
             echo "<big>Der Server um den Minecraft Server zu starten, ist momentan nicht erreichbar, bitte starte ihn manuell.</big>";
         } else {
-        if(is_checked_in()) { 
+        if(is_checked_in()) {
         ?>
         <!-- Eingeloggte Nutzer -->
         <section class="authorization">
@@ -63,8 +63,8 @@
                 </p>
             </div>
         </section>
-        <?php 
-                } else { 
+        <?php
+                } else {
             ?>
         <!-- Nicht eingeloggte Nutzer -->
         <section class="public">
@@ -81,7 +81,7 @@
             </div>
 
         </section>
-        <?php 
+        <?php
                 }
         }
         curl_close($fp);
