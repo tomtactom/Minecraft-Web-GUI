@@ -1,6 +1,6 @@
 # Minecraft Web GUI
 Verwalte deinen Minecraft Java Server über Rcon auf deiner Webseite. Starte und stoppe den Server, lasse dir anzeigen, wer sich gerade auf dem Server befindet und gebe Minecraft Befehle ein, die in Echtzeit im Spiel ausgeführt werden.
-"minecraft-web-GUI" ist eine Webseite im Minecraft Design, die dafür ausgelegt ist, eigene Minecraft Server (die auf Windows) laufen zu verwalten. Dafür muss auf dem Server auf dem die Daten dieses Repositorys liegen kein Windows Server sein und auch nicht der gleiche Server sein.
+"minecraft-web-GUI" ist eine Webseite im Minecraft Design, die dafür ausgelegt ist, eigene Minecraft Server (die auf Windows) laufen zu verwalten. Dafür muss auf dem Server, auf dem die Daten dieses Repositorys liegen, kein Windows Server sein und auch nicht der gleiche Server sein.
 
 ## Prerequisites
 
