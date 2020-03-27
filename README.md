@@ -1,6 +1,6 @@
 # Minecraft Web GUI
 Verwalte deinen Minecraft Java Server über Rcon auf deiner Webseite. Starte und stoppe den Server, lasse dir anzeigen, wer sich gerade auf dem Server befindet und gebe Minecraft Befehle ein, die in Echtzeit im Spiel ausgeführt werden.
-minecraft-web-GUI ist eine Webseite im Minecraft Design, die dafür ausgelegt ist eigene Minecraft Server (die auf Windows) laufen zu verwalten. Dafür muss auf dem Server auf dem die Daten dieses Repositorys liegen kein Windows Server sein und auch nicht der gleiche Server sein.
+minecraft-web-GUI ist eine Webseite im Minecraft Design, die dafür ausgelegt ist, eigene Minecraft Server (die auf Windows) laufen zu verwalten. Dafür muss auf dem Server auf dem die Daten dieses Repositorys liegen kein Windows Server sein und auch nicht der gleiche Server sein.
 
 ## Prerequisites
 
@@ -28,20 +28,20 @@ Erstelle unter "./scr/" die Datei config.inc.php mit diesem Inhalt. Er sagt, das
 	$host = '';
 	// Gebe hier dein Rcon-Passwort ein (Dein Rcon Passwort findest du in dem Reposetory "server-for-minecraft-web-GUI" in der Datei ./minecraft/server.properties in Zeile 37 hinter dem "rcon.password=")
 	$password = '';
-    
+
     $port = 25575;
 	$timeout = 5;
-    
+
     # Daten des Servers mit dem Reposetorys: "minecraft-web-GUI" im root
     //Datenbankname ggf. ändern und andere Zugangsdaten zur MySQL Datenbank eintragen
 	$db_host = 'localhost';
 	$db_name = 'mc_login';
 	$db_user = '';
 	$db_password = '';
-    
+
     //Hier Domain eintragen über die die Webseite laufen soll (Beispiel: https://subdomain.example.com)
 	$pageurl = '';
-    
+
 	$showFormular = true;
 	$showForm = true;
 	$pdo = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_password);
