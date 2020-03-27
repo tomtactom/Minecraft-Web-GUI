@@ -55,7 +55,7 @@ Importiere die Datei "database.sql". Das geht entweder mit [phpmyadmin](https://
 Die normalen Nutzerdaten sind jetzt:
 E-Mail-Adresse: mail@example.com
 Passwort: start
- 
+
 Ändere aus Sicherheitsgründen diese Zugangsdaten sofort. Das geht auch am besten über die GUI von phpmyadmin.
 Die E-Mail-Adresse wird unverschlüsselt gespeichert und kann demnach auch ganz einfach geändert werden. Das Passwort ist ein password_hash(). Den kann man z. B. unter [phpeinfach](https://www.php-einfach.de/diverses/md5-sha1-hash-generator/) generieren.
 
