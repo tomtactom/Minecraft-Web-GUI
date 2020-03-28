@@ -20,7 +20,7 @@
         </section>
     </aside>
     <article>
-        <p> 
+        <p>
             <?php echo $error_msg; ?>
         </p>
         <?php
