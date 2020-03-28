@@ -27,7 +27,7 @@
         $fp = curl_init("http://".$host);
         curl_setopt($fp,CURLOPT_TIMEOUT,4);
         curl_setopt($fp,CURLOPT_FAILONERROR,1);
-        curl_setopt($fp,CURLOPT_RETURNTRANSFER,1); 
+        curl_setopt($fp,CURLOPT_RETURNTRANSFER,1);
         curl_exec($fp);
         if (curl_errno($fp) != 0) {
             echo "<big>Der Server um den Minecraft Server zu starten, ist momentan nicht erreichbar, bitte starte ihn manuell.</big>";
