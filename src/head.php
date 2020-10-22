@@ -14,8 +14,8 @@
 		$ServerName = $Server->Get('hostname');
 		$ServerVersion = $Server->Get('version');
 	} else {
-		$ServerName = 'Lan-Party';
-		$ServerVersion = "1.12.2";
+		$ServerName = 'Toms Minecraft Server';
+		$ServerVersion = "1.16.3";
 	}
     if(is_checked_in()) {
         if(!empty($_POST["command"])) {
@@ -24,20 +24,20 @@
             }
         }
         if(isset($_POST['server_ram'])) {
-            $fp = fsockopen('www.'.$host, 80);
+            $fp = fsockopen($host, 443);
             if($fp !== false) {
-                $out = "GET /minecraft/start.php?ram=".$_POST['server_ram']." HTTP/1.1\r\n";
-                $out .= "Host: www.".$host."\r\n";
+                $out = "GET /start.php?ram=".$_POST['server_ram']." HTTP/1.1\r\n";
+                $out .= "Host: ".$host."\r\n";
                 $out .= "Connection: Close\r\n\r\n";
                 fwrite($fp, $out);
                 fclose($fp);
             }
         }
         if(isset($_POST['stopp_server'])) {
-            $fp = fsockopen('www.'.$host, 80);
+            $fp = fsockopen($host, 443);
             if($fp !== false) {
-                $out = "GET /minecraft/stopp.php HTTP/1.1\r\n";
-                $out .= "Host: www.".$host."\r\n";
+                $out = "GET /stopp.php HTTP/1.1\r\n";
+                $out .= "Host: ".$host."\r\n";
                 $out .= "Connection: Close\r\n\r\n";
                 fwrite($fp, $out);
                 fclose($fp);
@@ -106,7 +106,7 @@
                 $.post('', {server_ram: commandInput.val()}, function() {
                 });
             });
-            
+
             /*
             $("#start_server").click(function(e) {
                 e.preventDefault();
@@ -115,7 +115,7 @@
                 });
             });
             */
-            
+
             //Server stoppen
             $("button[name='stopp_server']").click(function(e) {
                 e.preventDefault();
@@ -145,7 +145,7 @@
                 $("#serverstatus").load("./src/live.php?serverstatus=1");
             }, 10000);
         <?php } ?>
-            
+
             $("#livelog").load("./src/live.php?livelog=1");
             var livelog = setInterval(
             function() {

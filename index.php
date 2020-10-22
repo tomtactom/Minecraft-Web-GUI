@@ -24,7 +24,7 @@
             <?php echo $error_msg; ?>
         </p>
         <?php
-        $fp = curl_init("http://".$host);
+        $fp = curl_init($host);
         curl_setopt($fp,CURLOPT_TIMEOUT,4);
         curl_setopt($fp,CURLOPT_FAILONERROR,1);
         curl_setopt($fp,CURLOPT_RETURNTRANSFER,1);
@@ -43,7 +43,7 @@
                 <form method="post">
                     <label>
                         <!--<input type="range" name="server_ram" min="128" max="3072" value="1535" title="Server Ram">-->
-                        <input type="text" name="server_ram" title="Server Ram" value="1535" min="128" maxlength="10">
+                        <input type="number" name="server_ram" title="Server Ram" value="1535" min="128" maxlength="10">
                     </label>
                     <button type="submit" id="start_server">Sever starten</button>
                 </form>

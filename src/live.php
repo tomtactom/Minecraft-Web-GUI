@@ -64,33 +64,33 @@
                         $("#sendcommandspectatora").click(function(e) {
                             e.preventDefault();
                             var commandInput = $("input[name='gamemode_spectatora']");
-                            $.post('', {command: commandInput.val()}, function() {  
+                            $.post('', {command: commandInput.val()}, function() {
                             });
                         });
-                        
+
                         //Schwierigkeitsgrad
                         $("#sendcommanddifficultypeaceful").click(function(e) {
                             e.preventDefault();
                             var commandInput = $("input[name='difficultypeaceful']");
-                            $.post('', {command: commandInput.val()}, function() {  
+                            $.post('', {command: commandInput.val()}, function() {
                             });
                         });
                         $("#sendcommanddifficultyeasy").click(function(e) {
                             e.preventDefault();
                             var commandInput = $("input[name='difficultyeasy']");
-                            $.post('', {command: commandInput.val()}, function() {  
+                            $.post('', {command: commandInput.val()}, function() {
                             });
                         });
                         $("#sendcommanddifficultynormal").click(function(e) {
                             e.preventDefault();
                             var commandInput = $("input[name='difficultynormal']");
-                            $.post('', {command: commandInput.val()}, function() {  
+                            $.post('', {command: commandInput.val()}, function() {
                             });
                         });
                         $("#sendcommanddifficultyhard").click(function(e) {
                             e.preventDefault();
                             var commandInput = $("input[name='difficultyhard']");
-                            $.post('', {command: commandInput.val()}, function() {  
+                            $.post('', {command: commandInput.val()}, function() {
                             });
                         });
                 </script>
@@ -173,7 +173,7 @@
                             $.post('', {command: commandInput.val()}, function() {
                             });
                         });
-                        
+
                         $("#sendcommandtp_spawn<?php echo $Player; ?>").click(function(e) {
                             e.preventDefault();
                             var commandInput = $("input[name='tp_spawn']");
@@ -203,7 +203,7 @@
 		}
 	} elseif($_GET['livelog']) {
         //Filtert Logfile
-        $lines = array_splice(explode("\r\n", file_get_contents("http://".$host."/minecraft/logs/latest.log")), 0);
+        $lines = array_splice(explode("\r\n", file_get_contents("http://".$host."/logs/latest.log")), 0);
         foreach(array_reverse($lines) as $line) {
             $serverInfo = strpos($line, "[Server thread/INFO]") !== false;
             $rcon = strpos($line, "[Rcon]") !== false;
@@ -218,4 +218,3 @@
             }
         }
     }
-	
