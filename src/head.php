@@ -24,20 +24,20 @@
             }
         }
         if(isset($_POST['server_ram'])) {
-            $fp = fsockopen($host, 443);
+            $fp = fsockopen($host, 80);
             if($fp !== false) {
                 $out = "GET /start.php?ram=".$_POST['server_ram']." HTTP/1.1\r\n";
-                $out .= "Host: ".$host."\r\n";
+                $out .= "Host: http://".$host."\r\n";
                 $out .= "Connection: Close\r\n\r\n";
                 fwrite($fp, $out);
                 fclose($fp);
             }
         }
         if(isset($_POST['stopp_server'])) {
-            $fp = fsockopen($host, 443);
+            $fp = fsockopen($host, 80);
             if($fp !== false) {
                 $out = "GET /stopp.php HTTP/1.1\r\n";
-                $out .= "Host: ".$host."\r\n";
+                $out .= "Host: http://".$host."\r\n";
                 $out .= "Connection: Close\r\n\r\n";
                 fwrite($fp, $out);
                 fclose($fp);
